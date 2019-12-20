@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/style1.css">
+		<script type = "text/javascript" src = "./js/02.js"></script>
+		<title>Experiments</title>
+	</head>
+	<body>
+		<div class = "topNav">
+				<!--<a id = "active" href="">Home</a>-->
+				<!--<img src = "images/Logo_C.png" alt = "logo" width= "364px">-->
+				<a class = "Title" href = "index.html">YOU WILL <span class = "special">(NOT)</span> SURVIVE</a>
+				<form method = "GET" action = "">
+					<input type = "seach" name = "searchQ" placeholder = "Search" class = "searchInput">
+					<input type="image" value = "submit" src = "images/search-img-w.png">
+				</form>
+				<a class = "button" onclick = "ShowLogin()">Login</a>
+		</div>
+        <div id="loginBox">
+            <h1>Login</h1>
+            <Form method ="POST" action = "#" autocomplete="on">
+                <div class="formElement">
+                    <span>Username</span>
+                    <input type="text" name = "username" placeholder= "username" required>
+                </div>
+                <div class="formElement" >
+					<span>Password:</span>
+					<input type="password" name ="password" required>
+                </div>
+                
+                    <input type="submit" onclick="Login()" value="Login">
+                    <input type="button" onclick="window.location.href='Form2.html';" value="No account? Register here" >
+            </Form>
+        </div>
+		<div class = "main">
+			<div class = "sideNav">
+				<ul>
+					<li><a href = "">Placeholder 01</a></li>
+					<li><a href = "">Placeholder 02</a></li>
+					<li><a href = "">Placeholder 03</a></li>
+					<li><a href = "">Placeholder 04</a></li>
+					<li><a href = "">Placeholder 05</a></li>
+					<li><a href = "">Placeholder 06</a></li>
+					<li><a href = "">Placeholder 07</a></li>
+					<li><a href = "">Placeholder 08</a></li>
+				</ul>
+			</div>
+			
+			<div class = "mainContent">
+				<h1>Sorting Stuff Here</h1>
+				<div class = "items">
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/Sayonara.png" width = 100%>
+								<figcaption class = "ProductName">Kanao</figcaption>
+								<figcaption class = "ProductPrice">$60</figcaption>						
+							</figure>
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+						<figure>
+							<img class = "ProductImage" src = "images/HomuraSuffering.jpeg" width = 100%>
+							<figcaption class = "ProductName">Akemi Homura 1</figcaption>
+							<figcaption class = "ProductPrice">$35</figcaption>						
+						</figure>
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/HomuraIsSuffering.png" width = 100%>
+								<figcaption class = "ProductName">Akemi Homura 2</figcaption>
+								<figcaption class = "ProductPrice">$48</figcaption>						
+							</figure>
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/SmugSalter.png" width = 100%>
+								<figcaption class = "ProductName">Saber Alter</figcaption>
+								<figcaption class = "ProductPrice">$67</figcaption>						
+							</figure>
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/JosefNice.png" width = 100%>
+								<figcaption class = "ProductName">Joseph Joestar</figcaption>
+								<figcaption class = "ProductPrice">$54</figcaption>						
+							</figure>
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/Okuyasu_feeling_refreshed.webp" width = 100%>
+								<figcaption class = "ProductName">Okuyasu</figcaption>
+								<figcaption class = "ProductPrice">$59</figcaption>						
+							</figure>
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/Mayushi.png" width = 100%>
+								<figcaption class = "ProductName">Mayushi</figcaption>
+								<figcaption class = "ProductPrice">$32</figcaption>						
+							</figure>
+					</div>	
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/Mai.png" width = 100%>
+								<figcaption class = "ProductName">Mai</figcaption>
+								<figcaption class = "ProductPrice">$90</figcaption>						
+							</figure>
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
+							<figure>
+								<img class = "ProductImage" src = "images/Ishigami.png" width = 100%>
+								<figcaption class = "ProductName">Ishigami</figcaption>
+								<figcaption class = "ProductPrice">$70</figcaption>						
+							</figure>			
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span></div>						
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span></div>						
+					</div>
+					<div class = "Item">
+						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span></div>						
+					</div>
+				</div>
+			</div>
+			<div class = "cart">
+				<h2>Cart</h2>
+			</div>	
+		</div>	
+			<footer>
+				<p>Special thanks to Senko-san whom without we couldn't have completed this website.</p>
+				<p>You have reached the end</p>
+			</footer>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type = "text/css" href = "./css/style3.css">
+        <title>Sign in</title>
+    </head>
+    <body>
+        <form action="POST" autocomplete ="on" action="#">
+            <div>
+                First Name:  <input type="text" placeholder="FirstName" required>
+            </div>
+            <div>
+                Last Name:   <input type="text" placeholder="LastName" required>
+            </div>
+            <div>
+                Email:  <input type="email" placeholder="example@hotmail.com" required>
+            </div>
+            <div>
+                Password:   <input type="password" required>
+            </div>
+            <div>
+                Telephone Number:   <input type="tel" placeholder="(##)-###-###" pattern=" \ (\d{2}\) +\d{3} - \d{3}" required>
+            </div>
+            <div>
+                Gender:
+                <input type="radio" name="Gender" value="Male"> Male
+                <input type="radio" name="Gender" value="Female"> Female
+            </div>
+            <div>
+				<label>Country:</label>
+				<select name='country'>
+					<option>Lebanon</option>
+					<option>Syria</option>
+					<option>Palestine</option>
+					<option>Saudi Arabia</option>
+                    <option>Egypt</option>
+                    <option>Oman</option>
+                    <option>France</option>
+                    <option>Italy</option>
+                    <option>Germany</option>
+                    <option>Spain</option>
+					<option>United States of America</option>
+				</select>
+			</div>
+            <div>
+                <input type="submit" onclick="window.location.href='Form1.html';" value="Register">
+            </div> 
+        </form>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+body{
+    font-family: Arial;
+    background-color: #FFF;
+}
+div{
+    font-size: 20px;
+    line-height: 50px;
+}
+div.username{
+    padding-top: 15%;
+}
+div.register{
+    float: left;
+    width: 10%;
+}
