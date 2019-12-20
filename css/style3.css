@@ -11,8 +11,8 @@
    /* display: none;
     opacity: 0;*/
     z-index: 200;
-    width:700px;
-    height:500px;
+    width:800px;
+    height:600px;
     background: var(--color-B);
     top:50%;
     left:50%;
@@ -33,14 +33,14 @@
 
 form#form2{
     margin-top: 20px;
-    width:550px;
+    width:700px;
     
 }
 #registerBox input{
     width:30%;
     margin-bottom: 15px;
 }
-div.formEelement.odd {
+div.left {
     float: left;
     
     
@@ -58,6 +58,7 @@ div.formEelement.odd {
     cursor: pointer;
 }
 #registerBox input[type="text"],input[type="password"],input[type="tel"],input[type="email"]{
+    display: block;
     border:none;
     background:transparent;
     height:40px;
@@ -66,7 +67,7 @@ div.formEelement.odd {
     color:white;
 }
 
-div.formElement.even {
+div.right {
     float:right;
         
 }
