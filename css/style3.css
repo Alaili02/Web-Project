@@ -41,7 +41,9 @@ form#form2{
     margin-bottom: 15px;
 }
 div.formEelement.odd {
-    float: left;    
+    float: left;
+    
+    
 }
 #registerBox input[type="submit"], input[type="button"]{
     margin-top:20px;
