@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="./css/style1.css">
-		<script type = "text/javascript" src = "./js/02.js"></script>
+		<script type = "text/javascript" src = "./js/02.js" defer></script>
 		<title>Experiments</title>
 	</head>
 	<body>
@@ -49,88 +49,8 @@
 			
 			<div class = "mainContent">
 				<h1>Sorting Stuff Here</h1>
-				<div class = "items">
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/Sayonara.png" width = 100%>
-								<figcaption class = "ProductName">Kanao</figcaption>
-								<figcaption class = "ProductPrice">$60</figcaption>						
-							</figure>
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-						<figure>
-							<img class = "ProductImage" src = "images/HomuraSuffering.jpeg" width = 100%>
-							<figcaption class = "ProductName">Akemi Homura 1</figcaption>
-							<figcaption class = "ProductPrice">$35</figcaption>						
-						</figure>
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/HomuraIsSuffering.png" width = 100%>
-								<figcaption class = "ProductName">Akemi Homura 2</figcaption>
-								<figcaption class = "ProductPrice">$48</figcaption>						
-							</figure>
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/SmugSalter.png" width = 100%>
-								<figcaption class = "ProductName">Saber Alter</figcaption>
-								<figcaption class = "ProductPrice">$67</figcaption>						
-							</figure>
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/JosefNice.png" width = 100%>
-								<figcaption class = "ProductName">Joseph Joestar</figcaption>
-								<figcaption class = "ProductPrice">$54</figcaption>						
-							</figure>
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/Okuyasu_feeling_refreshed.webp" width = 100%>
-								<figcaption class = "ProductName">Okuyasu</figcaption>
-								<figcaption class = "ProductPrice">$59</figcaption>						
-							</figure>
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/Mayushi.png" width = 100%>
-								<figcaption class = "ProductName">Mayushi</figcaption>
-								<figcaption class = "ProductPrice">$32</figcaption>						
-							</figure>
-					</div>	
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/Mai.png" width = 100%>
-								<figcaption class = "ProductName">Mai</figcaption>
-								<figcaption class = "ProductPrice">$90</figcaption>						
-							</figure>
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span"></div>
-							<figure>
-								<img class = "ProductImage" src = "images/Ishigami.png" width = 100%>
-								<figcaption class = "ProductName">Ishigami</figcaption>
-								<figcaption class = "ProductPrice">$70</figcaption>						
-							</figure>			
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span></div>						
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span></div>						
-					</div>
-					<div class = "Item">
-						<div class = "ShowOnHover"><span onclick = "AddToCart()">Add To Cart</span></div>						
-					</div>
+				<div id = "items">
+					<!--Javascript scipt fills area this with items-->
 				</div>
 			</div>
 			<div class = "cart">
