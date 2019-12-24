@@ -39,6 +39,14 @@ createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
+createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
+createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
+createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
+createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
 
 function AddToCart() {
     alert("This is an alert");
