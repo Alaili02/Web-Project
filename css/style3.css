@@ -28,26 +28,25 @@
 #registerBox h1{
     text-align: center;
     color: var(--color-G_F);
-
 }
 
 form#form2{
-    margin-top: 20px;
+    margin-top:50px;
     width:700px;
     
 }
 #registerBox input{
-    width:30%;
     margin-bottom: 15px;
 }
 div.left {
     float: left;
-    
-    
+    clear: both;
+    width: 40%;    
 }
 #registerBox input[type="submit"], input[type="button"]{
+    width:20%;
     margin-top:20px;
-    margin-left:250px;
+    margin-left:300px;
     background-color: var(--color-G_F);
     color: white;
     font-weight: bold;
@@ -69,7 +68,8 @@ div.left {
 
 div.right {
     float:right;
-        
+    clear: both;
+    width: 40%;
 }
 label {
     font-weight: bold;
