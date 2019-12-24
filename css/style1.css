@@ -174,11 +174,17 @@
 		display: block;
 		text-align: center;
 		color: white;
-		padding: 6px;
+		padding: 0px;
 	}
 	.Item figcaption.ProductPrice {
 		border-radius: 0px 0px 12px 12px;
 	}
+	.Item figcaption a {
+		text-decoration: none;
+		display:block;
+		padding:6px;
+	}
+
 	.cart {
         flex: 1 1 200px;
 		background-color: #b7b8b7;

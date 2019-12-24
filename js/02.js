@@ -6,6 +6,8 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     var productImageE = document.createElement("img");
     var productNameE = document.createElement("figcaption");
     var productPriceE = document.createElement("figcaption");
+    var nameLinkE = document.createElement("a");
+    var pricelinkE = document.createElement("a");
 
     ItemE.classList.add("Item");
     hoverDivE.classList.add("ShowOnHover");
@@ -17,8 +19,10 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productNameE.classList.add("ProductName");
     productPriceE.classList.add("ProductPrice");
 
-    productNameE.innerText = productNameTxt;
-    productPriceE.innerText = productPriceTxt;
+    nameLinkE.href = "www.google.com";
+    nameLinkE.innerText = productNameTxt;
+    pricelinkE.href = "www.google.com";
+    pricelinkE.innerText = productPriceTxt;
 
     document.getElementById("items").appendChild(ItemE);
     ItemE.appendChild(figureContainerE);
@@ -26,16 +30,15 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     hoverDivE.appendChild(hoverSpanE);
     figureContainerE.appendChild(productImageE);
     figureContainerE.appendChild(productNameE);
+    productNameE.appendChild(nameLinkE);
     figureContainerE.appendChild(productPriceE);
-}
-createItem("images/Sayonara.png","Name Placeholder", "Price Placeholder");
+    productPriceE.appendChild(pricelinkE);
+}   
+
+createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
-createItem("images/HomuraIsSuffering.png","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
 
 function AddToCart() {
     alert("This is an alert");
