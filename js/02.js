@@ -57,9 +57,26 @@ function AddToCart(name, price) {
       var cell1 = row.insertCell(0);    
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
       cell1.innerHTML = name;
-      cell2.innerHTML = "quantity";
+      cell2.innerHTML ="<input type='number' name='quantity' min='1' value='1'>";;
       cell3.innerHTML = price;    
+      cell4.innerHTML ="<button onclick='deleteRow()'class='buttonremove'>remove</button>"
+}
+function deleteRow() {
+    var index, table = document.getElementById('cart1');
+    for(var i = 1; i < table.rows.length; i++)
+    {
+        table.rows[i].cells[3].onclick = function()
+        {
+            var c = confirm("do you want to remove this item");
+            if(c === true)
+            {
+                index = this.parentElement.rowIndex;
+                table.deleteRow(index);
+            }            
+        };            
+    }
 }
 function ShowLogin() {
     var blanket = document.createElement("div");

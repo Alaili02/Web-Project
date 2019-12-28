@@ -193,6 +193,15 @@
 		background-color: #b7b8b7;
 		
 	}
+	input[type="number"]{
+		width:50px;
+		color: black;
+	}
+	.buttonremove{
+		background-color: red;
+		color: black;
+		border-color: red;
+	}
 	.cart H2 {
 		margin-top: 10px;
 		color: white;
