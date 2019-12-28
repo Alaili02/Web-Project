@@ -11,8 +11,8 @@
    /* display: none;
     opacity: 0;*/
     z-index: 200;
-    width:800px;
-    height:600px;
+    width:700px;
+    height:500px;
     background: var(--color-B);
     top:50%;
     left:50%;
@@ -28,24 +28,23 @@
 #registerBox h1{
     text-align: center;
     color: var(--color-G_F);
-
 }
 
 form#form2{
-    margin-top: 20px;
-    width:700px;
+    margin-top:50px;
+    width:600px;
     
 }
 #registerBox input{
-    width:30%;
     margin-bottom: 15px;
 }
 div.left {
     float: left;
-    
-    
+    clear: both;
+    width: 40%;    
 }
-#registerBox input[type="submit"], input[type="button"]{
+#registerBox input[type="submit"]{
+    width:20%;
     margin-top:20px;
     margin-left:250px;
     background-color: var(--color-G_F);
@@ -69,7 +68,8 @@ div.left {
 
 div.right {
     float:right;
-        
+    clear: both;
+    width: 40%;
 }
 label {
     font-weight: bold;

@@ -48,8 +48,18 @@ createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder"
 createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
 
-function AddToCart(name, price) {
-    alert("You added "+name+" which costs "+price);
+
+function AddToCart() {
+    var newcart = document.getElementById("cart");
+     newcart.classList.add("updatedcart");
+      var table = document.getElementById("cart1");    
+      var row = table.insertRow(1);    
+      var cell1 = row.insertCell(0);    
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      cell1.innerHTML = "name";
+      cell2.innerHTML = "quantity";
+      cell3.innerHTML = "price";    
 }
 function ShowLogin() {
     var blanket = document.createElement("div");
