@@ -11,7 +11,7 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
 
     ItemE.classList.add("Item");
     hoverDivE.classList.add("ShowOnHover");
-    hoverSpanE.setAttribute("onClick", "AddToCart()");
+    hoverSpanE.addEventListener("click", function(){AddToCart(productNameTxt,productPriceTxt)}, false);
     hoverSpanE.innerText = "Add To Cart";
 
     productImageE.classList.add("ProductImage");
@@ -33,7 +33,7 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productNameE.appendChild(nameLinkE);
     figureContainerE.appendChild(productPriceE);
     productPriceE.appendChild(pricelinkE);
-}   
+}
 
 createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
@@ -48,8 +48,8 @@ createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder"
 createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
 
-function AddToCart() {
-    alert("This is an alert");
+function AddToCart(name, price) {
+    alert("You added "+name+" which costs "+price);
 }
 function ShowLogin() {
     var blanket = document.createElement("div");
