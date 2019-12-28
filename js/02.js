@@ -35,7 +35,7 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productPriceE.appendChild(pricelinkE);
 }
 
-createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
+createItem("images/sayonara.png","Name Placeholder", "50$");
 createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
@@ -47,8 +47,6 @@ createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
-
-
 function AddToCart(name, price) {
     var newcart = document.getElementById("cart");
      newcart.classList.add("updatedcart");
@@ -58,13 +56,18 @@ function AddToCart(name, price) {
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
+      var x=window.prompt("how many?","1");
       cell1.innerHTML = name;
-      cell2.innerHTML ="<input type='number' name='quantity' min='1' value='1'>";;
-      cell3.innerHTML = price;    
+      cell2.innerHTML =x;
+      cell3.innerHTML = price;
+      var pricevalue=parseFloat(price);    
       cell4.innerHTML ="<button onclick='deleteRow()'class='buttonremove'>remove</button>"
+      xvalue=parseFloat(x);
+      updatetotale(x,pricevalue);
+     
 }
 function deleteRow() {
-    var index, table = document.getElementById('cart1');
+    var index, table = document.getElementById("cart1");
     for(var i = 1; i < table.rows.length; i++)
     {
         table.rows[i].cells[3].onclick = function()
@@ -78,6 +81,19 @@ function deleteRow() {
         };            
     }
 }
+var sum=0;
+function updatetotale(x,y){    
+    sum=sum +(x*y);
+   var total=document.getElementById("total");
+   total.innerHTML="Total:"+sum+"$  <button id='b1'onclick='checkout()'>checkout</button>";
+}
+function checkout(){
+    alert("the total is "+sum+"$");
+    sum=0;
+    updatetotale(0,0);
+    var newcart = document.getElementById("cart");
+     newcart.classList.add("updatedcart");   
+   }
 function ShowLogin() {
     var blanket = document.createElement("div");
     blanket.id = "blanket"
