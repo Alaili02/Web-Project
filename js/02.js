@@ -49,7 +49,7 @@ createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
 
 
-function AddToCart() {
+function AddToCart(name, price) {
     var newcart = document.getElementById("cart");
      newcart.classList.add("updatedcart");
       var table = document.getElementById("cart1");    
@@ -57,9 +57,9 @@ function AddToCart() {
       var cell1 = row.insertCell(0);    
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
-      cell1.innerHTML = "name";
+      cell1.innerHTML = name;
       cell2.innerHTML = "quantity";
-      cell3.innerHTML = "price";    
+      cell3.innerHTML = price;    
 }
 function ShowLogin() {
     var blanket = document.createElement("div");
