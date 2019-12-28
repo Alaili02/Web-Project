@@ -180,8 +180,13 @@
 		border-radius: 0px 0px 12px 12px;
 	}
 	.cart {
-        flex: 1 1 200px;
+		display:none;        
+	}
+	.updatedcart{
+		display: inline;
+		flex: 1 1 200px;
 		background-color: #b7b8b7;
+		
 	}
 	.cart H2 {
 		margin-top: 10px;
