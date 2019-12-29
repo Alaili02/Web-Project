@@ -35,7 +35,14 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productPriceE.appendChild(pricelinkE);
 }
 
-createItem("images/sayonara.png","Name Placeholder", "50$");
+createItem("images/Shaving Products/Shaving Product 1.jpg","Brush", "1$");
+createItem("images/Shaving Products/Shaving Product 6.jpg","Harry's Bundle", "5$");
+createItem("images/Shaving Products/Shaving Product 3.jpg","Brush and Razor (White)", "2$");
+createItem("images/Shaving Products/Shaving Product 4.jpg","Brush and Razor (Blue)", "2$");
+createItem("images/Shaving Products/Shaving Product 8.jpg","Charcoal Shaving", "5$");
+createItem("images/Shaving Products/Shaving Product 7.jpg","Gillette Foam", "7$");
+createItem("images/Shaving Products/Shaving Product 2.jpg","Brush,Razor and Holder(White)", "3$");
+createItem("images/Shaving Products/Shaving Product 5.jpg","Electric Razor", "10$");
 
 var x=0;
 var pricevalue=0;
@@ -84,7 +91,7 @@ function checkout(){
     sum=0;
     updatetotale(0,0);
     var newcart = document.getElementById("cart");
-     newcart.classList.add("updatedcart");   
+     newcart.classList.remove("updatedcart");   
    }
 function ShowLogin() {
     var blanket = document.createElement("div");
