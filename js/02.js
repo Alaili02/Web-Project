@@ -47,6 +47,8 @@ createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
 createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
+var x=0;
+var pricevalue=0;
 function AddToCart(name, price) {
     var newcart = document.getElementById("cart");
      newcart.classList.add("updatedcart");
@@ -56,13 +58,12 @@ function AddToCart(name, price) {
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
       var cell4 = row.insertCell(3);
-      var x=window.prompt("how many?","1");
+      x=window.prompt("how many?","1");
       cell1.innerHTML = name;
       cell2.innerHTML =x;
       cell3.innerHTML = price;
-      var pricevalue=parseFloat(price);    
+      pricevalue=parseFloat(price);    
       cell4.innerHTML ="<button onclick='deleteRow()'class='buttonremove'>remove</button>"
-      xvalue=parseFloat(x);
       updatetotale(x,pricevalue);
      
 }
@@ -80,6 +81,7 @@ function deleteRow() {
             }            
         };            
     }
+    updatetotale(-x,pricevalue);
 }
 var sum=0;
 function updatetotale(x,y){    
