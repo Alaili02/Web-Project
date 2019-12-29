@@ -94,7 +94,7 @@ function checkout(){
     sum=0;
     updatetotale(0,0);
     var newcart = document.getElementById("cart");
-     newcart.classList.add("updatedcart");   
+     newcart.classList.remove("updatedcart");   
    }
 function ShowLogin() {
     var blanket = document.createElement("div");
