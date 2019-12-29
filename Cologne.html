@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="../css/style1.css">
-		<!--<script type = "text/javascript" src = "../js/02.js" defer></script>-->
+		<link rel="stylesheet" type="text/css" href="./css/style1.css">
+		<script type = "text/javascript" src = "./js/Cologne.js" defer></script>
 		<title>Experiments</title>
 	</head>
 	<body>
@@ -13,7 +13,7 @@
 				<a class = "Title" href = "index.html">YOU WILL <span class = "special">(NOT)</span> SURVIVE</a>
 				<form method = "GET" action = "">
 					<input type = "seach" name = "searchQ" placeholder = "Search" class = "searchInput">
-					<input type="image" value = "submit" src = "../images/search-img-w.png">
+					<input type="image" value = "submit" src = "images/search-img-w.png">
 				</form>
 				<a class = "button" onclick = "ShowLogin()">Login</a>
 		</div>
@@ -48,28 +48,27 @@
 			</div>
 			
 			<div class = "mainContent">
-				<div class = "container">
-					<img id = "MainProductImage" src= "../images/HomuraSuffering.jpeg" width =  40%>
-					<div class = "ProductContent">
-						<h1>Product Name</h1>
-						<p>HASHIRE SORI YO KAZE NO YOU NI TSUKIMIHARA WO <span class = "special">PADORU PADORU</span></p>
-					</div>
+				<h1>Sorting Stuff Here</h1>
+				<div id = "items">
+					<!--Javascript scipt fills area this with items-->
 				</div>
 			</div>
-			<div class = "cart">
+			<div id="cart" class="cart">
 				<h2>Cart</h2>
-				<table>
-					<thead>
-						<th>product</th>
-						<th>quantity</th>
-						<th>price</th>
-					</thead>
+				<table id="cart1">
+					<tr>
+						<td>product</td>
+						<td>quantity</td>
+						<td>price</td>
+					</tr>
+					<tfoot>
+						<td colspan="4" id="total">Total=0.00$</td>
+					</tfoot>
 				</table>
 			</div>	
 		</div>	
 			<footer>
-				<p>Special thanks to Senko-san whom without we couldn't have completed this website.</p>
-				<p>You have reached the end</p>
+
 			</footer>
 	</body>
 </html>
