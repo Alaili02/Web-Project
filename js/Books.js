@@ -35,8 +35,15 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productPriceE.appendChild(pricelinkE);
 }
 
-createItem("images/sayonara.png","Name Placeholder", "50$");
-
+createItem("images/books/book1.png","Name Placeholder", "50$");
+createItem("images/books/book2.jpg","Name Placeholder", "50$");
+createItem("images/books/book3.jpg","Name Placeholder", "50$");
+createItem("images/books/book4.jpg","Name Placeholder", "50$");
+createItem("images/books/book5.jpg","Name Placeholder", "50$");
+createItem("images/books/book6.jpg","Name Placeholder", "50$");
+createItem("images/books/book7.jpg","Name Placeholder", "50$");
+createItem("images/books/book8.jpg","Name Placeholder", "50$");
+createItem("images/books/book9.jpg","Name Placeholder", "50$");
 var x=0;
 var pricevalue=0;
 function AddToCart(name, price) {
