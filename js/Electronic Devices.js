@@ -35,8 +35,14 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productPriceE.appendChild(pricelinkE);
 }
 
-createItem("images/sayonara.png","Name Placeholder", "50$");
-
+createItem("images/electronics/electronics1 .jpg","Name Placeholder", "50$");
+createItem("images/electronics/electronics2.jpg","Name Placeholder", "50$");
+createItem("images/electronics/electronics3.jpg","Name Placeholder", "50$");
+createItem("images/electronics/electronics5.jpg","Name Placeholder", "50$");
+createItem("images/electronics/electronics6.jpg","Name Placeholder", "50$");
+createItem("images/electronics/electronics8.png","Name Placeholder", "50$");
+createItem("images/electronics/electronics9.png","Name Placeholder", "50$");
+createItem("images/electronics/electronics10.png","Name Placeholder", "50$");
 var x=0;
 var pricevalue=0;
 function AddToCart(name, price) {
