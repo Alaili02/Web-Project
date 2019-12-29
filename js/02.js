@@ -6,10 +6,12 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     var productImageE = document.createElement("img");
     var productNameE = document.createElement("figcaption");
     var productPriceE = document.createElement("figcaption");
+    var nameLinkE = document.createElement("a");
+    var pricelinkE = document.createElement("a");
 
     ItemE.classList.add("Item");
     hoverDivE.classList.add("ShowOnHover");
-    hoverSpanE.setAttribute("onClick", "AddToCart()");
+    hoverSpanE.addEventListener("click", function(){AddToCart(productNameTxt,productPriceTxt)}, false);
     hoverSpanE.innerText = "Add To Cart";
 
     productImageE.classList.add("ProductImage");
@@ -17,8 +19,10 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productNameE.classList.add("ProductName");
     productPriceE.classList.add("ProductPrice");
 
-    productNameE.innerText = productNameTxt;
-    productPriceE.innerText = productPriceTxt;
+    nameLinkE.href = "www.google.com";
+    nameLinkE.innerText = productNameTxt;
+    pricelinkE.href = "www.google.com";
+    pricelinkE.innerText = productPriceTxt;
 
     document.getElementById("items").appendChild(ItemE);
     ItemE.appendChild(figureContainerE);
@@ -26,19 +30,24 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     hoverDivE.appendChild(hoverSpanE);
     figureContainerE.appendChild(productImageE);
     figureContainerE.appendChild(productNameE);
+    productNameE.appendChild(nameLinkE);
     figureContainerE.appendChild(productPriceE);
+    productPriceE.appendChild(pricelinkE);
 }
-createItem("images/Sayonara.png","Name Placeholder", "Price Placeholder");
+
+createItem("images/sayonara.png","Name Placeholder", "50$");
 createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
-createItem("images/HomuraIsSuffering.png","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
 createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
-createItem("images/square-placeholder.jpg","Name Placeholder", "Price Placeholder");
-
-
-function AddToCart() {
+createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
+createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
+createItem("images/sayonara.png","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraSuffering.jpeg","Name Placeholder", "Price Placeholder");
+createItem("images/HomuraisSuffering.png","Name Placeholder", "Price Placeholder");
+createItem("images/SmugSalter.png","Name Placeholder", "Price Placeholder");
+function AddToCart(name, price) {
     var newcart = document.getElementById("cart");
      newcart.classList.add("updatedcart");
       var table = document.getElementById("cart1");    
@@ -46,10 +55,45 @@ function AddToCart() {
       var cell1 = row.insertCell(0);    
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
-      cell1.innerHTML = "name";
-      cell2.innerHTML = "quantity";
-      cell3.innerHTML = "price";    
+      var cell4 = row.insertCell(3);
+      var x=window.prompt("how many?","1");
+      cell1.innerHTML = name;
+      cell2.innerHTML =x;
+      cell3.innerHTML = price;
+      var pricevalue=parseFloat(price);    
+      cell4.innerHTML ="<button onclick='deleteRow()'class='buttonremove'>remove</button>"
+      xvalue=parseFloat(x);
+      updatetotale(x,pricevalue);
+     
 }
+function deleteRow() {
+    var index, table = document.getElementById("cart1");
+    for(var i = 1; i < table.rows.length; i++)
+    {
+        table.rows[i].cells[3].onclick = function()
+        {
+            var c = confirm("do you want to remove this item");
+            if(c === true)
+            {
+                index = this.parentElement.rowIndex;
+                table.deleteRow(index);
+            }            
+        };            
+    }
+}
+var sum=0;
+function updatetotale(x,y){    
+    sum=sum +(x*y);
+   var total=document.getElementById("total");
+   total.innerHTML="Total:"+sum+"$  <button id='b1'onclick='checkout()'>checkout</button>";
+}
+function checkout(){
+    alert("the total is "+sum+"$");
+    sum=0;
+    updatetotale(0,0);
+    var newcart = document.getElementById("cart");
+     newcart.classList.add("updatedcart");   
+   }
 function ShowLogin() {
     var blanket = document.createElement("div");
     blanket.id = "blanket"
