@@ -36,7 +36,6 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
 }
 
 createItem("images/books/book1.png","Name Placeholder", "50$");
-createItem("images/books/book2.jpg","Name Placeholder", "50$");
 createItem("images/books/book3.jpg","Name Placeholder", "50$");
 createItem("images/books/book4.jpg","Name Placeholder", "50$");
 createItem("images/books/book5.jpg","Name Placeholder", "50$");
