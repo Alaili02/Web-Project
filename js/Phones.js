@@ -35,7 +35,14 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productPriceE.appendChild(pricelinkE);
 }
 
-createItem("images/sayonara.png","Name Placeholder", "50$");
+createItem("images/phones/phone3.png","Name Placeholder", "50$");
+createItem("images/phones/phone4.jpg","Name Placeholder", "50$");
+createItem("images/phones/phone5.jpg","Name Placeholder", "50$");
+createItem("images/phones/phone6.jpg","Name Placeholder", "50$");
+createItem("images/phones/phone7.jpg","Name Placeholder", "50$");
+createItem("images/phones/phone8.jpg","Name Placeholder", "50$");
+createItem("images/phones/phone9.jpg","Name Placeholder", "50$");
+createItem("images/phones/phone2.jpg","Name Placeholder", "50$");
 
 var x=0;
 var pricevalue=0;

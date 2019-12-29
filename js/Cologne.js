@@ -35,8 +35,14 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     productPriceE.appendChild(pricelinkE);
 }
 
-createItem("images/sayonara.png","Name Placeholder", "50$");
-
+createItem("images/cologne/cologne1.jpg","Name Placeholder", "50$");
+createItem("images/cologne/cologne2.jpg","Name Placeholder", "50$");
+createItem("images/cologne/cologne8.jpg","Name Placeholder", "50$");
+createItem("images/cologne/cologne7.jpg","Name Placeholder", "50$");
+createItem("images/cologne/cologne5.jpg","Name Placeholder", "50$");
+createItem("images/cologne/cologne6.jpg","Name Placeholder", "50$");
+createItem("images/cologne/cologne3.jpg","Name Placeholder", "50$");
+createItem("images/cologne/cologne4.jpg","Name Placeholder", "50$");
 var x=0;
 var pricevalue=0;
 function AddToCart(name, price) {
