@@ -1,3 +1,22 @@
+document.addEventListener("load", start(), false);
+function start() {
+    var arrayy = [{name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book1.png"},
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book2.jpg"},
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book3.jpg"},
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book4.jpg"},
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book5.jpg"},
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book6.jpg"},
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book7.jpg"},
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book8.jpg"},   
+                    {name:"Samsung Galaxy S9",price:"$999",src:"../images/books/book9.jpg"},   
+                    {name:"",price:"",src:""},  
+                    {name:"",price:"",src:""},  
+                    {name:"",price:"",src:""},  
+                 ];
+    for (var i = 0; i < arrayy.length; i++) {
+        createItem(arrayy[i].src,arrayy[i].name, arrayy[i].price);
+    }
+}
 function createItem(imageSrc, productNameTxt, productPriceTxt) {
     var ItemE = document.createElement("div");
     var hoverDivE = document.createElement("div");
@@ -34,33 +53,83 @@ function createItem(imageSrc, productNameTxt, productPriceTxt) {
     figureContainerE.appendChild(productPriceE);
     productPriceE.appendChild(pricelinkE);
 }
+var CdropDown1 = document.getElementById("Category1");
+var CC1 = document.getElementById("Category1Container");
 
-createItem("images/books/book1.png","Name Placeholder", "50$");
-createItem("images/books/book3.jpg","Name Placeholder", "50$");
-createItem("images/books/book4.jpg","Name Placeholder", "50$");
-createItem("images/books/book5.jpg","Name Placeholder", "50$");
-createItem("images/books/book6.jpg","Name Placeholder", "50$");
-createItem("images/books/book7.jpg","Name Placeholder", "50$");
-createItem("images/books/book8.jpg","Name Placeholder", "50$");
-createItem("images/books/book9.jpg","Name Placeholder", "50$");
+var CdropDown2 = document.getElementById("Category2");
+var CC2 = document.getElementById("Category2Container");
+
+var CdropDown3 = document.getElementById("Category3");
+var CC3 = document.getElementById("Category3Container");
+
+var CdropDown4 = document.getElementById("Category4");
+var CC4 = document.getElementById("Category4Container");
+
+var f1,f2,f3,f4;
+
+CdropDown1.addEventListener("click", function() {ToggleDisplay(CC1,CdropDown1);hide(CC2,CdropDown2);hide(CC3,CdropDown3);hide(CC4,CdropDown4)}, false);
+CdropDown2.addEventListener("click", function() {ToggleDisplay(CC2,CdropDown2);hide(CC1,CdropDown1);hide(CC3,CdropDown3);hide(CC4,CdropDown4)}, false);
+CdropDown3.addEventListener("click", function() {ToggleDisplay(CC3,CdropDown3);hide(CC2,CdropDown2);hide(CC1,CdropDown1);hide(CC4,CdropDown4)}, false);
+CdropDown4.addEventListener("click", function() {ToggleDisplay(CC4,CdropDown4);hide(CC2,CdropDown2);hide(CC3,CdropDown3);hide(CC1,CdropDown1)}, false);
+
+function ToggleDisplay(e, parent) {
+    if (e.classList.contains("hidden")) {
+        e.classList.remove("hidden");
+        e.classList.add("visible");
+        parent.classList.add("active");
+    } else {
+        e.classList.remove("visible");
+        e.classList.add("hidden");
+        parent.classList.remove("active");
+    }
+}
+function hide(e,parent) {
+    if (e.classList.contains("visible")) {
+        e.classList.remove("visible");
+        e.classList.add("hidden");
+        parent.classList.remove("active");
+    }
+}
+
+
+function CartToggle() {
+    var cart = document.getElementById("cart");
+    var mainContent = document.getElementById("MainContentID");
+    if(cart.classList.contains("updatedcart")) {
+        mainContent.classList.remove("shifted");
+        cart.classList.remove("updatedcart");
+        cart.classList.add("cart");
+        document.getElementById("CartBtn").classList.remove("active");
+    } else {
+        mainContent.classList.add("shifted");
+        cart.classList.add("updatedcart");
+        document.getElementById("CartBtn").classList.add("active");
+    }
+}
+function ShowCart(cart,mainContent) {
+    document.getElementById("CartBtn").classList.add("active");
+    mainContent.classList.add("shifted");
+    cart.classList.add("updatedcart");
+}
+
 var x=0;
 var pricevalue=0;
 function AddToCart(name, price) {
-    var newcart = document.getElementById("cart");
-     newcart.classList.add("updatedcart");
-      var table = document.getElementById("cart1");    
-      var row = table.insertRow(1);    
-      var cell1 = row.insertCell(0);    
-      var cell2 = row.insertCell(1);
-      var cell3 = row.insertCell(2);
-      var cell4 = row.insertCell(3);
-      x=window.prompt("how many?","1");
-      cell1.innerHTML = name;
-      cell2.innerHTML =x;
-      cell3.innerHTML = price;
-      pricevalue=parseFloat(price);    
-      cell4.innerHTML ="<button onclick='deleteRow()'class='buttonremove'>remove</button>"
-      updatetotale(x,pricevalue);
+    var newcart = document.getElementById("cart"); 
+    ShowCart(newcart, document.getElementById("MainContentID"));
+    var table = document.getElementById("cart1");    
+    var row = table.insertRow(1);    
+    var cell1 = row.insertCell(0);    
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    x=window.prompt("how many?","1");
+    cell1.innerHTML = name;
+    cell2.innerHTML =x;
+    cell3.innerHTML = price;
+    pricevalue=parseFloat(price);    
+    cell4.innerHTML ="<button onclick='deleteRow()'class='buttonremove'>remove</button>"
+    updatetotale(x,pricevalue);
      
 }
 function deleteRow() {
@@ -98,14 +167,21 @@ function ShowLogin() {
     document.body.appendChild(blanket);
     document.getElementById("loginBox").style.display = "block";
     document.getElementById("loginBox").style.opacity = "1";
-
-    blanket.onclick = function HideLogin() {
-        document.getElementById("loginBox").style.display = "none";
-        document.getElementById("loginBox").style.opacity = "0";
-        document.body.removeChild(blanket);
-    };
+    document.getElementById("loginBox").style.zIndex = "200";
+    blanket.addEventListener("click", function() {HideLogin()}, false);
+}
+function HideLogin() {
+    document.getElementById("loginBox").style.display = "hidden";
+    document.getElementById("loginBox").style.opacity = "0";
+    setTimeout(function(){document.getElementById("loginBox").style.zIndex = "-200";},250);
+    //document.getElementById("loginBox").style.zIndex = "-200";
+    document.body.removeChild(blanket);
 }
 
 function Login() {
-    document.getElementById("loginBox").style.display = "hidden";   
+    HideLogin();
+    var username = document.getElementById("UsernameInput").value;
+    if (username != "") {
+        document.getElementById("Username").innerHTML = username;
+    }
 }

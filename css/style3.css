@@ -5,6 +5,7 @@
     --color-G_L:#29ce29b3;
     --color-C:#161A1D; /*Item BG Color*/
     --color-D:#202528; /**/
+    font-family: Arial, Helvetica, sans-serif;
 }	
 body{
     background-color:var(--color-A) ;

@@ -2,23 +2,23 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="./css/style1.css">
-		<script type = "text/javascript" src = "./js/02.js" defer></script>
+		<link rel="stylesheet" type="text/css" href="../css/style1.css">
+		<script type = "text/javascript" src = "../js/Books.js" defer></script>
 		<title>Experiments</title>
 	</head>
 	<body>
 		<div class = "topNav">
 			<div class = "Title">
-				<a href = "index.html"class = "Title">Home</a>
+				<a href = "../index.html"class = "Title">Home</a>
 			</div>
 			<form id = "searchDiv" method = "GET" action = "">
 				<input type = "seach" name = "searchQ" placeholder = "Search" class = "searchInput">
-				<input type="image" value = "submit" src = "images/search-img-w.png">
+				<input type="image" value = "submit" src = "../images/search-img-w.png">
 			</form>
 			<div id = "RightNav">
 				<span id = "WelcomeText">Welcome <span class = "special">Guest</span></span>
 				<div id = "NavButtons">
-					<button  onclick="window.location.href='pages/Form2.html';">Register</button>
+					<button  onclick="window.location.href='Form2.html';">Register</button>
 					<button onclick="ShowLogin()">Login</button>
 					<button id = "CartBtn" onclick="CartToggle()">Cart</button>
 				</div>
@@ -38,7 +38,7 @@
 					<input type="password" name ="Password" required>
                 </div>                
                     <input type="submit" value="Login">
-                    <input type="button" onclick="window.location.href='pages/Form2.html';" value="No account? Register here" >
+                    <input type="button" onclick="window.location.href='Form2.html';" value="No account? Register here" >
             </Form>
         </div>
 		<div class = "sideNav">
@@ -46,34 +46,34 @@
 				<li class = "dropDown" id = "Category1">Video Games</li>
 				<li class = "container hidden" id = "Category1Container">
 					<ul>
-						<li><a href = "pages/Consoles.html">Consoles</a></li>
-						<li><a href = "pages/games.html">Games</a></li>
-						<li><a href = "pages/accessories.html">Accessories</a></li>
-						<li><a href = "pages/giftcards.html">Giftcards</a></li>
+						<li><a href = "Consoles.html">Consoles</a></li>
+						<li><a href = "games.html">Games</a></li>
+						<li><a href = "accessories.html">Accessories</a></li>
+						<li><a href = "giftcards.html">Giftcards</a></li>
 					</ul>
 				</li>
 				<li class = "dropDown" id = "Category2">Home Products</li>
 				<li class = "container hidden" id = "Category2Container">
 					<ul>
-						<li><a href = "pages/Cologne.html">Cologne</a></li>
-						<li><a href = "pages/Shaving Products.html">Shaving Products</a></li>
+						<li><a href = "Cologne.html">Cologne</a></li>
+						<li><a href = "Shaving Products.html">Shaving Products</a></li>
 					</ul>
 				</li>
 				<li class = "dropDown" id = "Category3">Electronics</li>
 				<li class = "container hidden" id = "Category3Container">
 					<ul>
-						<li><a href = "pages/phones.html">Phones</a></li>
-						<li><a href = "pages/PrebuiltComputers.html">Prebuilt Computers</a></li>
+						<li><a href = "phones.html">Phones</a></li>
+						<li><a href = "PrebuiltComputers.html">Prebuilt Computers</a></li>
 					</ul>
 				</li>	
 				<li class = "dropDown" id = "Category4">Others</li>
 				<li class = "container hidden" id = "Category4Container">
 					<ul>
-						<li><a href = "pages/Books.html">Books</a></li>
+						<li><a href = "Books.html">Books</a></li>
 					</ul>
 				</li>		
 			</ul>
-		</div>			
+		</div>	
 		<div class = "mainContent" id = "MainContentID">
 			<h1>Popular Items</h1>
 			<div id = "items">

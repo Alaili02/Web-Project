@@ -30,81 +30,115 @@
 
 	.topNav {
 		z-index: 10;
-		position: sticky;
+		display: flex;
+		flex-flow: row wrap;
+		position: fixed;
+		height: 80px;
 		top: 0;
         width: 100%;
 		background-color: var(--color-B);
         border-bottom: 3px solid var(--color-G_F);
         overflow: hidden;
 	}
-	.topNav img {
-		padding: 10px;
+	div.topNav #Username {
+		color: var(--color-G_F);
 	}
-	.topNav a.button{
+
+	.topNav button {
+		float: left;
 		font-size:1.5em;
-		height: 30px;
-		padding: 3px 6px 3px 6px;
-		margin-top:47px;
-		text-decoration:none;
-		color:white;
-		float: right;
+		padding: 6px 12px;
 		cursor: pointer;
+		background-color:var(--color-B);
+		color: white;
+		border: none;
 		transition: background-color 0.1s ease-in-out;
 	}
-	.topNav a.button:hover{
+	.topNav button:hover{
 		background-color: var(--color-G_L);
 	}
-	.topNav a.Title{
-		text-decoration: none;
-		color: white;
-		margin: 0px;
-		font-size: 3em;
-        float: left;
-        padding: 12px;
-        height: 59px;
+	.topNav #CartBtn.active {
+		background-color: var(--color-G_F);
 	}
+	.topNav #WelcomeText{
+		display:block;
+		margin-top: 8px;
+		color: white;
+		width: 100%;
+		padding: 8px;
+		text-align: center;
+		font-size: 1em;
+	}
+	.topNav #NavButtons{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+
+	.topNav div.Title{
+		height: 100%;
+		flex: 0 0 20%;
+	}
+	.topNav div.Title a{
+		display: block;
+		margin-right: 120px;
+		height: 60px;
+		padding: 10px;
+		font-size: 3em;
+		color: var(--color-G_F);
+		text-decoration: none;
+	}
+
 	
 	.special {
 		color: var(--color-G_F);
 	}
-    .topNav form {
-		float: right;
-		margin-top: 47px;
-    }
+	.topNav form {
+		display:block;
+		flex: 0 0 50%;
+		margin: 0px 5%;
+		height: 56px;
+		padding: 12px 0;
+	}
     .topNav form input[value=submit] {
-		float: right;
-		margin-right: 5px;
+		display: block;
 		background-color: var(--color-G_F);
 		font-size: 1em;
-		height: 28px;
+		height: 38px;
 		padding:4px;
 		border: none;
 		cursor: pointer;
+		border-radius: 0px 10px 10px 0px;
     }
 
     .searchInput {
-        height: 20px;
-        width: 200px;
+		display: block;
+		border-radius: 10px 0px 0px 10px;
+		float: left;
+        height: 30px;
+        width: 80%;
         clear: both;
 		border: none;
         color: black;
-        padding: 8px;
+		padding: 8px;
 		font-size:1.5em;
-    }
-
-    .main {
-        clear: both;
-        overflow: hidden;
-
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: stretch;
-    }
+	}
+	.topNav #RightNav{
+		flex: 0 0 20%;
+		height: 80px;
+	}
 	.mainContent {
+		margin-top: 80px;
+		clear: both;
+		overflow: hidden;
+		float: left;
+		margin-left: 16%;
 		justify-content: flex-start;
 		align-content: flex-start;
-		flex: 8 1 800px;
-    }
+	}
+	.mainContent.shifted {
+		margin-right: 25%;
+	}
     .mainContent h1 {
         padding:10px;
         text-align: center;
@@ -115,9 +149,6 @@
 		align-items: stretch;
 		justify-content: flex-start;
     }
-	.sideNav{
-        flex: 1 1 200px;
-	}
 	.Item {
 		position: relative;
 		z-index: 0;
@@ -127,7 +158,6 @@
 		border-radius: 15px;
 		background-color: var(--color-C);
 	}
-
 	.Item .ShowOnHover {
 		opacity: 0;
 		z-index: 1;
@@ -188,10 +218,13 @@
 		display:none;        
 	}
 	.updatedcart{
-		display: inline;
-		flex: 1 1 200px;
-		background-color: #b7b8b7;
-		
+		margin-top: 80px;
+		display: block;
+		position: fixed;
+		right: 0;
+		width: 25%;
+		background-color: #29ce29;
+		height: 100%;	
 	}
 	input[type="number"]{
 		width:50px;
@@ -214,22 +247,55 @@
 		background-color: var(--color-D);
 		height: 100%;
 	}
-
-	div.sideNav li a {
-		text-align: center;
+	.hidden {
+		display:none;
+	}
+	.visible {
+		display:block;
+		border-bottom: 3px solid var(--color-G_F);
+	}
+	.active {
+		background-color: var(--color-G_F);
+	}
+	.sideNav{
+		position:fixed;
+		margin-top: 80px;
+		height: 100%;
+		width: 16%;
+		overflow: auto;
+	}
+	div.sideNav li.dropDown{
 		display: block;
 		padding: 16px;
 		color: white;
+		font-weight: bold;
+		text-align: center;
+		cursor: pointer;
+		transition: background-color 0.1s ease-in-out;
+	}
+	div.sideNav li.dropDown:hover {
+		background-color: var(--color-C);	
+	}
+	div.sideNav li.dropDown.active:hover {
+		background-color: var(--color-G_L);	
+	}
+	div.sideNav li a {
+		display: block;
+		font-weight: bold;
+		padding: 16px;
+		background-color: var(--color-C);
+		color: white;
+		text-align: center;
 		text-decoration:none;
+		transition: background-color 0.1s ease-in-out;
 	}
 	div.sideNav li a:hover {
-		background-color: var(--color-C);
-		cursor: pointer;
+		background-color: #0c0e0f;
 	}
 	#loginBox{
-		display: none;
+		display: hidden;
 		opacity: 0;
-		z-index: 200;
+		z-index: -200;
 		width:320px;
 		height:420px;
 		background: var(--color-B);
@@ -242,7 +308,7 @@
 		border-radius: 25px;
 		padding-right:30px;
 		padding-left:30px;
-		transition: opacity 5s ease-in-out;
+		transition: opacity 0.25s ease-in-out;
 	}
 	#loginBox h1{
 		margin-top:15px;
@@ -275,14 +341,6 @@
 		height: 40px;
 		border-radius:20px;
 		cursor: pointer;
-	}
-	footer{
-		background-color: var(--color-C);
-		text-align: center;
-		margin-top: 80px;
-		padding: 15px;
-		padding-top: 100px;
-		font-size: 1em;
 	}
 
 	.cart table{
