@@ -1,54 +1,63 @@
+class item {
+    constructor(nameI,priceI,srcI) {
+        this.name = nameI;
+        this.price = priceI;
+        this.src=srcI;
+      }
+    createItem() {
+        var ItemE = document.createElement("div");
+        var hoverDivE = document.createElement("div");
+        var hoverSpanE = document.createElement("span");
+        var figureContainerE = document.createElement("figure");
+        var productImageE = document.createElement("img");
+        var productNameE = document.createElement("figcaption");
+        var productPriceE = document.createElement("figcaption");
+        var nameLinkE = document.createElement("a");
+        var pricelinkE = document.createElement("a");
+    
+        ItemE.classList.add("Item");
+        hoverDivE.classList.add("ShowOnHover");
+        hoverSpanE.addEventListener("click", function(){AddToCart(this.name,this.price)}, false);
+        hoverSpanE.innerText = "Add To Cart";
+    
+        productImageE.classList.add("ProductImage");
+        productImageE.src = this.src;
+        productNameE.classList.add("ProductName");
+        productPriceE.classList.add("ProductPrice");
+    
+        nameLinkE.href = "www.google.com";
+        nameLinkE.innerText = this.name;
+        pricelinkE.href = "www.google.com";
+        pricelinkE.innerText = this.price;
+    
+        document.getElementById("items").appendChild(ItemE);
+        ItemE.appendChild(figureContainerE);
+        ItemE.appendChild(hoverDivE);
+        hoverDivE.appendChild(hoverSpanE);
+        figureContainerE.appendChild(productImageE);
+        figureContainerE.appendChild(productNameE);
+        productNameE.appendChild(nameLinkE);
+        figureContainerE.appendChild(productPriceE);
+        productPriceE.appendChild(pricelinkE);
+    }
+
+}
 document.addEventListener("load", start(), false);
 function start() {
-    var phones = [{name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},
-                    {name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},
-                    {name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},
-                    {name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},
-                    {name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},
-                    {name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},
-                    {name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},
-                    {name:"Samsung Galaxy S9",price:"$999",src:"images/phones/phone1.jpg",},      
-                 ];
+    let item1=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item2=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item3=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item5=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item6=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item4= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item7= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item8= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    var phones = [item1,item2,item3,item5,item6,item4,item7,item8];
     for (var i = 0; i < phones.length; i++) {
-        createItem(phones[i].src,phones[i].name, phones[i].price);
+        phones[i].createItem();
     }
 }
-function createItem(imageSrc, productNameTxt, productPriceTxt) {
-    var ItemE = document.createElement("div");
-    var hoverDivE = document.createElement("div");
-    var hoverSpanE = document.createElement("span");
-    var figureContainerE = document.createElement("figure");
-    var productImageE = document.createElement("img");
-    var productNameE = document.createElement("figcaption");
-    var productPriceE = document.createElement("figcaption");
-    var nameLinkE = document.createElement("a");
-    var pricelinkE = document.createElement("a");
 
-    ItemE.classList.add("Item");
-    hoverDivE.classList.add("ShowOnHover");
-    hoverSpanE.addEventListener("click", function(){AddToCart(productNameTxt,productPriceTxt)}, false);
-    hoverSpanE.innerText = "Add To Cart";
-
-    productImageE.classList.add("ProductImage");
-    productImageE.src = imageSrc;
-    productNameE.classList.add("ProductName");
-    productPriceE.classList.add("ProductPrice");
-
-    nameLinkE.href = "www.google.com";
-    nameLinkE.innerText = productNameTxt;
-    pricelinkE.href = "www.google.com";
-    pricelinkE.innerText = productPriceTxt;
-
-    document.getElementById("items").appendChild(ItemE);
-    ItemE.appendChild(figureContainerE);
-    ItemE.appendChild(hoverDivE);
-    hoverDivE.appendChild(hoverSpanE);
-    figureContainerE.appendChild(productImageE);
-    figureContainerE.appendChild(productNameE);
-    productNameE.appendChild(nameLinkE);
-    figureContainerE.appendChild(productPriceE);
-    productPriceE.appendChild(pricelinkE);
-}
 var CdropDown1 = document.getElementById("Category1");
 var CC1 = document.getElementById("Category1Container");
 
