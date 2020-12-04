@@ -1,0 +1,43 @@
+#NavBar.Shifted {transform: translate(var(--sidebar-width));}
+#NavBar {
+    z-index: 10;
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    height: var(--nav-height);
+    top: 0;
+    width: 100%;
+    background-color: var(--color-B);
+    border-top: 3px solid var(--color-G_F);
+    overflow: hidden;
+
+    -webkit-box-shadow: 0 0.005em 0.5em rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0.005em 0.5em rgba(0,0,0,0.75);
+    box-shadow: 0 0.005em 0.5em rgba(0,0,0,0.75);
+    transition: transform 0.2s ease;
+}
+
+#NavBar button:nth-child(3) {margin-left: auto;}
+#NavBar button {
+    font-size:1.5em;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color:var(--color-B);
+    color: white;
+    border: none;
+    transition: background-color 0.1s ease-in-out;
+    outline: none;
+}
+
+#NavBar button:hover{background-color: var(--color-G_L);}
+#NavBar #CartBtn.active {background-color: var(--color-G_F);}
+
+#NavBar div#logo{height: 100%;}
+#NavBar div#logo a{
+    display: block;
+
+    padding: 6px 12px;
+    font-size: 2.5rem;
+    color: var(--color-G_F);
+    text-decoration: none;
+}

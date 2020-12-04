@@ -30,7 +30,7 @@ class item {
         pricelinkE.href = "www.google.com";
         pricelinkE.innerText = this.price;
     
-        document.getElementById("items").appendChild(ItemE);
+        document.getElementById("Items").appendChild(ItemE);
         ItemE.appendChild(figureContainerE);
         ItemE.appendChild(hoverDivE);
         hoverDivE.appendChild(hoverSpanE);
@@ -99,21 +99,21 @@ function hide(e,parent) {
 
 function CartToggle() {
     var cart = document.getElementById("cart");
-    var mainContent = document.getElementById("MainContentID");
+    var mainContent = document.getElementById("MainContent");
     if(cart.classList.contains("updatedcart")) {
-        mainContent.classList.remove("shifted");
+        mainContent.classList.remove("CartShift");
         cart.classList.remove("updatedcart");
         cart.classList.add("cart");
         document.getElementById("CartBtn").classList.remove("active");
     } else {
-        mainContent.classList.add("shifted");
+        mainContent.classList.add("CartShift");
         cart.classList.add("updatedcart");
         document.getElementById("CartBtn").classList.add("active");
     }
 }
 function ShowCart(cart,mainContent) {
     document.getElementById("CartBtn").classList.add("active");
-    mainContent.classList.add("shifted");
+    mainContent.classList.add("CartShift");
     cart.classList.add("updatedcart");
 }
 
@@ -121,7 +121,7 @@ var x=0;
 var pricevalue=0;
 function AddToCart(name, price) {
     var newcart = document.getElementById("cart"); 
-    ShowCart(newcart, document.getElementById("MainContentID"));
+    ShowCart(newcart, document.getElementById("MainContent"));
     var table = document.getElementById("cart1");    
     var row = table.insertRow(1);    
     var cell1 = row.insertCell(0);    

@@ -1,0 +1,29 @@
+.cart {
+    margin-top: var(--nav-height);
+    width: var(--cart-width);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: calc(-1 *var(--cart-width));
+    transition: transform 0.2s ease;
+    background-color: var(--color-G_L);
+}
+.updatedcart{
+    transform: translate(calc(-1 *var(--cart-width)));
+}
+.cart H2 {
+    margin-top: 10px;
+    color: white;
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+}
+.cart table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.cart th,td{
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding:10px;
+}

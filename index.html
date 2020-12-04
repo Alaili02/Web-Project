@@ -3,45 +3,25 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="./css/style1.css">
+		<link rel="stylesheet" type="text/css" href="./css/NavBar.css">
+		<link rel="stylesheet" type="text/css" href="./css/SideMenu.css">
+		<link rel="stylesheet" type="text/css" href="./css/MainContent.css">
+		<link rel="stylesheet" type="text/css" href="./css/Items.css">
+		<link rel="stylesheet" type="text/css" href="./css/Cart.css">
 		<script type = "text/javascript" src = "./js/02.js" defer></script>
 		<title>Experiments</title>
 	</head>
 	<body>
-		<div class = "topNav">
-			<div class = "Title">
-				<a href = "index.html"class = "Title">Home</a>
+		<div id = "NavBar">
+			<button id ="SideButton">Click</button>
+			<div id = "logo">
+				<a href = "index.html">Home</a>
 			</div>
-			<form id = "searchDiv" method = "GET" action = "">
-				<input type = "seach" name = "searchQ" placeholder = "Search" class = "searchInput">
-				<input type="image" value = "submit" src = "images/search-img-w.png">
-			</form>
-			<div id = "RightNav">
-				<span id = "WelcomeText">Welcome <span class = "special">Guest</span></span>
-				<div id = "NavButtons">
-					<button  onclick="window.location.href='pages/Form2.html';">Register</button>
-					<button onclick="ShowLogin()">Login</button>
-					<button id = "CartBtn" onclick="CartToggle()">Cart</button>
-				</div>
-				
-			</div>
-			
+			<button onclick="window.location.href='pages/Form2.html';">Register</button>
+			<button onclick="ShowLogin()">Login</button>
+			<button id = "CartBtn" onclick="CartToggle()">Cart</button>
 		</div>
-        <div id="loginBox">
-            <h1>Login</h1>
-            <Form method ="POST" action = "#" autocomplete="on" onsubmit="Login()">
-                <div class="formElement">
-                    <span>Username</span>
-                    <input type="text" name = "username" id = "UsernameInput" placeholder= "Username" required>
-                </div>
-                <div class="formElement" >
-					<span>Password:</span>
-					<input type="password" name ="Password" required>
-                </div>                
-                    <input type="submit" value="Login">
-                    <input type="button" onclick="window.location.href='pages/Form2.html';" value="No account? Register here" >
-            </Form>
-        </div>
-		<div class = "sideNav">
+		<div id = "SideMenu">
 			<ul>
 				<li class = "dropDown" id = "Category1">Video Games</li>
 				<li class = "container hidden" id = "Category1Container">
@@ -74,9 +54,13 @@
 				</li>		
 			</ul>
 		</div>			
-		<div class = "mainContent" id = "MainContentID">
+		<div id = "MainContent">
+			<form id = "searchDiv" method = "GET" action = "">
+				<input type = "seach" name = "searchQ" placeholder = "Search" class = "searchInput">
+				<input type="image" value = "submit" src = "images/search-img-w.png">
+			</form>
 			<h1>Popular Items</h1>
-			<div id = "items">
+			<div id = "Items">
 				<!--Javascript scipt fills area this with items-->
 			</div>
 		</div>
@@ -92,5 +76,46 @@
 				</tfoot>
 			</table>
 		</div>		
+		<div id="loginBox">
+            <h1>Login</h1>
+            <Form method ="POST" action = "#" autocomplete="on" onsubmit="Login()">
+                <div class="formElement">
+                    <span>Username</span>
+                    <input type="text" name = "username" id = "UsernameInput" placeholder= "Username" required>
+                </div>
+                <div class="formElement" >
+					<span>Password:</span>
+					<input type="password" name ="Password" required>
+                </div>                
+                    <input type="submit" value="Login">
+                    <input type="button" onclick="window.location.href='pages/Form2.html';" value="No account? Register here" >
+            </Form>
+        </div>
+		<script>
+			let SideButton = document.getElementById("SideButton");
+			let MainContent = document.getElementById("MainContent");
+			let Navbar = document.getElementById("NavBar");
+			let SideMenu = document.getElementById("SideMenu");
+			var CartBtn = document.getElementById("cart");
+	
+			SideButton.addEventListener('click', toggleSideMain);
+			function toggleSideMain() {
+				if(CartBtn.classList.contains("updatedcart")) {
+					MainContent.classList.remove("CartShift");
+					cart.classList.remove("updatedcart");
+					cart.classList.add("cart");
+					document.getElementById("CartBtn").classList.remove("active");
+				}
+				if (!MainContent.classList.contains("Shifted")) {
+					MainContent.classList.add("Shifted");
+					SideMenu.classList.add("Shifted");
+					Navbar.classList.add("Shifted");
+				} else {
+					MainContent.classList.remove("Shifted");
+					SideMenu.classList.remove("Shifted");
+					Navbar.classList.remove("Shifted");
+				}
+			}
+		</script>
 	</body>
 </html>
