@@ -123,11 +123,11 @@ function AddToCart(name,price) {
     cell2.innerHTML =x;
     cell3.innerHTML = parseFloat(price)*x;
     cell4.innerHTML=counter;
-    cell5.innerHTML ="<button onclick='deleteRow("+counter+")'class='buttonremove'>remove</button>" ;
+    cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
     updatetotale(x, parseFloat(price));    
     counter++;
 }
-function deleteRow(numberOfRows) {
+function removeRow(numberOfRows) {
     counter--;
     table = document.getElementById("cart1");
     var p =table.rows[numberOfRows].cells[2].innerText;
@@ -144,7 +144,14 @@ function checkout(){
     alert("the total is "+sum+"$");
     sum=0;
     updatetotale(0,0);
-    CartToggle();  
+     var table=document.getElementById("cart1");
+     
+     for (var i=1;i<table.rows.length-1;i++ ){
+        console.log(i);
+        table.deleteRow(i);
+     }
+    CartToggle();
+    counter=1;
    }
 function ShowLogin() {
     var blanket = document.createElement("div");
