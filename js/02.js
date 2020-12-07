@@ -150,10 +150,10 @@ function checkout(){
     alert("the total is "+sum+"$");
     sum=0;
     updatetotale(0,0);
-     var table=document.getElementById("cart1");
-     
-     for (var i=1;i<table.rows.length-1;i++ ){
-        table.deleteRow(i);
+    var table=document.getElementById("cart1");  
+    var counter3=table.rows.length-1; 
+     for (var i=1;i<counter3;i++){                  
+        table.deleteRow(1);
      }
     CartToggle();
     counter=1;
