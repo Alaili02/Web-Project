@@ -48,8 +48,8 @@ class item {
 document.addEventListener("load", start(), false);
 function start() {
     let item1=new item ("Samsung Galaxy S9","10","images/phones/phone1.jpg");
-    let item2=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
-    let item3=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item2=new item ("Samsung Galaxy S9","20","images/phones/phone1.jpg");
+    let item3=new item ("Samsung Galaxy S9","30","images/phones/phone1.jpg");
     let item5=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item6=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item4= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
@@ -131,7 +131,13 @@ function removeRow(numberOfRows) {
     counter--;
     table = document.getElementById("cart1");
     var p =table.rows[numberOfRows].cells[2].innerText;
+    var counter2 =parseFloat(table.rows[numberOfRows].cells[3].innerText);
     table.deleteRow(numberOfRows);
+     for (counter2;counter2<table.rows.length-1;counter2++ ){
+        table.rows[numberOfRows].cells[3].innerText=counter2;
+        table.rows[numberOfRows].cells[4].innerHTML="<button onclick='removeRow("+counter2+")'class='buttonremove'>remove</button>";
+     }
+
     updatetotale(parseFloat(p),-1);
 }
 var sum=0;
@@ -147,7 +153,6 @@ function checkout(){
      var table=document.getElementById("cart1");
      
      for (var i=1;i<table.rows.length-1;i++ ){
-        console.log(i);
         table.deleteRow(i);
      }
     CartToggle();
