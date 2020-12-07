@@ -3,8 +3,11 @@ class item {
         this.name = nameI;
         this.price = priceI;
         this.src=srcI;
+        this. createItem();
       }
     createItem() {
+        var nameE=this.name;
+        var priceE=this.price;
         var ItemE = document.createElement("div");
         var hoverDivE = document.createElement("div");
         var hoverSpanE = document.createElement("span");
@@ -17,7 +20,7 @@ class item {
     
         ItemE.classList.add("Item");
         hoverDivE.classList.add("ShowOnHover");
-        hoverSpanE.addEventListener("click", function(){AddToCart(this.name,this.price)}, false);
+        hoverSpanE.addEventListener("click", function(){AddToCart(nameE,priceE)}, false);
         hoverSpanE.innerText = "Add To Cart";
     
         productImageE.classList.add("ProductImage");
@@ -44,29 +47,22 @@ class item {
 }
 document.addEventListener("load", start(), false);
 function start() {
-    let item1=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
+    let item1=new item ("Samsung Galaxy S9","10","images/phones/phone1.jpg");
     let item2=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item3=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item5=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item6=new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item4= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item7= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
-    let item8= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
-    var phones = [item1,item2,item3,item5,item6,item4,item7,item8];
-    for (var i = 0; i < phones.length; i++) {
-        phones[i].createItem();
-    }
+    let item8= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");   
 }
 
 var CdropDown1 = document.getElementById("Category1");
 var CC1 = document.getElementById("Category1Container");
-
 var CdropDown2 = document.getElementById("Category2");
 var CC2 = document.getElementById("Category2Container");
-
 var CdropDown3 = document.getElementById("Category3");
 var CC3 = document.getElementById("Category3Container");
-
 var CdropDown4 = document.getElementById("Category4");
 var CC4 = document.getElementById("Category4Container");
 
@@ -111,50 +107,38 @@ function CartToggle() {
         document.getElementById("CartBtn").classList.add("active");
     }
 }
-function ShowCart(cart,mainContent) {
-    document.getElementById("CartBtn").classList.add("active");
-    mainContent.classList.add("CartShift");
-    cart.classList.add("updatedcart");
-}
-
-var x=0;
-var pricevalue=0;
-function AddToCart(name, price) {
-    var newcart = document.getElementById("cart"); 
-    ShowCart(newcart, document.getElementById("MainContent"));
+var counter=1;
+function AddToCart(name,price) {
+    if(cart.classList.contains("updatedcart")){}
+   else{ CartToggle();}
     var table = document.getElementById("cart1");    
-    var row = table.insertRow(1);    
+    var row = table.insertRow(counter);    
     var cell1 = row.insertCell(0);    
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
-    x=window.prompt("how many?","1");
+    var cell5 = row.insertCell(4);
     cell1.innerHTML = name;
+    var x= window.prompt("hot much?","1");
     cell2.innerHTML =x;
-    cell3.innerHTML = price;
-    pricevalue=parseFloat(price);    
-    cell4.innerHTML ="<button onclick='deleteRow()'class='buttonremove'>remove</button>"
-    updatetotale(x,pricevalue);
-     
+    cell3.innerHTML = parseFloat(price)*x;
+    cell4.innerHTML=counter;
+    cell5.innerHTML ="<button onclick='deleteRow("+counter+")'class='buttonremove'>remove</button>" ;
+    updatetotale(x, parseFloat(price));    
+    counter++;
 }
-function deleteRow() {
-    var index, table = document.getElementById("cart1");
-    for(var i = 1; i < table.rows.length; i++)
-    {
-        table.rows[i].cells[3].onclick = function()
-        {
-            var c = confirm("do you want to remove this item");
-            if(c === true)
-            {
-                index = this.parentElement.rowIndex;
-                table.deleteRow(index);
-            }            
-        };            
-    }
-    updatetotale(-x,pricevalue);
+function deleteRow(numberOfRows) {
+    table = document.getElementById("cart1");
+  table.deleteRow(numberOfRows);         
+    var q =table.rows[numberOfRows].cells[2];
+    var p =table.rows[numberOfRows].cells[3];
+    counter--;
+    console.log(parseFloat(p));
+    console.log(q);
+    updatetotale(parseFloat(p),-q);
 }
 var sum=0;
-function updatetotale(x,y){    
+function updatetotale(x,y){   
     sum=sum +(x*y);
    var total=document.getElementById("total");
    total.innerHTML="Total:"+sum+"$  <button id='b1'onclick='checkout()'>checkout</button>";
