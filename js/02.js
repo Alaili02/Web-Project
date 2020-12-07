@@ -119,7 +119,7 @@ function AddToCart(name,price) {
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
     cell1.innerHTML = name;
-    var x= window.prompt("hot much?","1");
+    var x= window.prompt("how much?","1");
     cell2.innerHTML =x;
     cell3.innerHTML = parseFloat(price)*x;
     cell4.innerHTML=counter;
@@ -128,14 +128,11 @@ function AddToCart(name,price) {
     counter++;
 }
 function deleteRow(numberOfRows) {
-    table = document.getElementById("cart1");
-  table.deleteRow(numberOfRows);         
-    var q =table.rows[numberOfRows].cells[2];
-    var p =table.rows[numberOfRows].cells[3];
     counter--;
-    console.log(parseFloat(p));
-    console.log(q);
-    updatetotale(parseFloat(p),-q);
+    table = document.getElementById("cart1");
+    var p =table.rows[numberOfRows].cells[2].innerText;
+    table.deleteRow(numberOfRows);
+    updatetotale(parseFloat(p),-1);
 }
 var sum=0;
 function updatetotale(x,y){   
