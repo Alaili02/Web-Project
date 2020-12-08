@@ -118,22 +118,25 @@ function CartToggle() {
 
 function AddToCart(name,price) {
     if(cart.classList.contains("updatedcart")){}
-   else{ CartToggle();}  
+   else{ CartToggle();} 
+   var x= window.prompt("how much?","1"); 
+   if (x!=null && x>0){
     var row = table.insertRow(counter);    
     var cell1 = row.insertCell(0);    
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     var cell5 = row.insertCell(4);
-    cell1.innerHTML = name;
-    var x= window.prompt("how much?","1");
+    cell1.innerHTML = name;    
     cell2.innerHTML =x;
     cell3.innerHTML = parseFloat(price)*x;
     cell4.innerHTML=counter;
     // cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
     cell5.innerHTML = "<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
      counter++;
-    updatetotale(x, parseFloat(price)); 
+    updatetotale(x, parseFloat(price)); }
+    else {return;}
+
 }
 function removeRow(numberOfRows) {
     counter--;
