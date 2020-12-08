@@ -67,40 +67,40 @@ function start() {
 var sum=0;
 var counter=1;
 var table=document.getElementById("cart1"); 
-var CdropDown1 = document.getElementById("Category1");
-var CC1 = document.getElementById("Category1Container");
-var CdropDown2 = document.getElementById("Category2");
-var CC2 = document.getElementById("Category2Container");
-var CdropDown3 = document.getElementById("Category3");
-var CC3 = document.getElementById("Category3Container");
-var CdropDown4 = document.getElementById("Category4");
-var CC4 = document.getElementById("Category4Container");
+// var CdropDown1 = document.getElementById("Category1");
+// var CC1 = document.getElementById("Category1Container");
+// var CdropDown2 = document.getElementById("Category2");
+// var CC2 = document.getElementById("Category2Container");
+// var CdropDown3 = document.getElementById("Category3");
+// var CC3 = document.getElementById("Category3Container");
+// var CdropDown4 = document.getElementById("Category4");
+// var CC4 = document.getElementById("Category4Container");
 
-var f1,f2,f3,f4;
+// var f1,f2,f3,f4;
 
-CdropDown1.addEventListener("click", function() {ToggleDisplay(CC1,CdropDown1);hide(CC2,CdropDown2);hide(CC3,CdropDown3);hide(CC4,CdropDown4)}, false);
-CdropDown2.addEventListener("click", function() {ToggleDisplay(CC2,CdropDown2);hide(CC1,CdropDown1);hide(CC3,CdropDown3);hide(CC4,CdropDown4)}, false);
-CdropDown3.addEventListener("click", function() {ToggleDisplay(CC3,CdropDown3);hide(CC2,CdropDown2);hide(CC1,CdropDown1);hide(CC4,CdropDown4)}, false);
-CdropDown4.addEventListener("click", function() {ToggleDisplay(CC4,CdropDown4);hide(CC2,CdropDown2);hide(CC3,CdropDown3);hide(CC1,CdropDown1)}, false);
+// CdropDown1.addEventListener("click", function() {ToggleDisplay(CC1,CdropDown1);hide(CC2,CdropDown2);hide(CC3,CdropDown3);hide(CC4,CdropDown4)}, false);
+// CdropDown2.addEventListener("click", function() {ToggleDisplay(CC2,CdropDown2);hide(CC1,CdropDown1);hide(CC3,CdropDown3);hide(CC4,CdropDown4)}, false);
+// CdropDown3.addEventListener("click", function() {ToggleDisplay(CC3,CdropDown3);hide(CC2,CdropDown2);hide(CC1,CdropDown1);hide(CC4,CdropDown4)}, false);
+// CdropDown4.addEventListener("click", function() {ToggleDisplay(CC4,CdropDown4);hide(CC2,CdropDown2);hide(CC3,CdropDown3);hide(CC1,CdropDown1)}, false);
 
-function ToggleDisplay(e, parent) {
-    if (e.classList.contains("hidden")) {
-        e.classList.remove("hidden");
-        e.classList.add("visible");
-        parent.classList.add("active");
-    } else {
-        e.classList.remove("visible");
-        e.classList.add("hidden");
-        parent.classList.remove("active");
-    }
-}
-function hide(e,parent) {
-    if (e.classList.contains("visible")) {
-        e.classList.remove("visible");
-        e.classList.add("hidden");
-        parent.classList.remove("active");
-    }
-}
+// function ToggleDisplay(e, parent) {
+//     if (e.classList.contains("hidden")) {
+//         e.classList.remove("hidden");
+//         e.classList.add("visible");
+//         parent.classList.add("active");
+//     } else {
+//         e.classList.remove("visible");
+//         e.classList.add("hidden");
+//         parent.classList.remove("active");
+//     }
+// }
+// function hide(e,parent) {
+//     if (e.classList.contains("visible")) {
+//         e.classList.remove("visible");
+//         e.classList.add("hidden");
+//         parent.classList.remove("active");
+//     }
+// }
 function CartToggle() {
     var cart = document.getElementById("cart");
     var mainContent = document.getElementById("MainContent");
@@ -116,41 +116,54 @@ function CartToggle() {
     }
 }
 
+let tbody = document.getElementById("ProductsCartBody");
 function AddToCart(name,price) {
     if(cart.classList.contains("updatedcart")){}
    else{ CartToggle();} 
-   var x= window.prompt("how much?","1"); 
-   if (x!=null && x>0){
-    var row = table.insertRow(counter);    
-    var cell1 = row.insertCell(0);    
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    cell1.innerHTML = name;    
-    cell2.innerHTML =x;
-    cell3.innerHTML = parseFloat(price)*x;
-    cell4.innerHTML=counter;
-    // cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
-    cell5.innerHTML = "<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
-     counter++;
-    updatetotale(x, parseFloat(price)); }
-    else {return;}
+   let promptQuantity= window.prompt("how much?","1"); 
+   if (promptQuantity!=null && promptQuantity>0){
+        var row = tbody.insertRow(-1);    
+        var cell1 = row.insertCell(0);    
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = name;    
+        cell2.innerHTML = promptQuantity;
+        cell3.innerHTML = parseFloat(price)*promptQuantity;
+        cell4.innerHTML = counter;
+        // cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
+        // cell5.innerHTML = "<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
+        let clearImage = document.createElement("img");
+        clearImage.src = './images/icons/clear_black.png';
+        clearImage.classList.add("cartItemClear");
+        clearImage.addEventListener("click", function() {
+            row.remove();
+            updatetotale(parseFloat(price), -promptQuantity);
+        }, false);
+        cell5.appendChild(clearImage);
+        // counter++;
+        updatetotale(promptQuantity, parseFloat(price));    
+    }
+    else {
+        return;
+    }
 
 }
-function removeRow(numberOfRows) {
-    counter--;
-    console.log(numberOfRows);
-    var p =table.rows[numberOfRows].cells[2].innerText;
-    var counter2 =parseFloat(table.rows[numberOfRows].cells[3].innerText);
-    table.deleteRow(numberOfRows);
-     for (counter2;counter2<table.rows.length-1;counter2++ ){
-        table.rows[numberOfRows].cells[3].innerText=counter2;
-        // table.rows[numberOfRows].cells[4].innerHTML="<button onclick='removeRow("+counter2+")'class='buttonremove'>remove</button>";
-        table.rows[numberOfRows].cells[4].innerHTML="<img onclick = 'removeRow("+counter2+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
-     }
-    updatetotale(parseFloat(p),-1);
-}
+// function removeRow(numberOfRows) {
+//     counter--;
+//     console.log(numberOfRows);
+//     var p =table.rows[numberOfRows].cells[2].innerText;  //price
+//     var counter2 =parseFloat(table.rows[numberOfRows].cells[3].innerText);
+//     table.deleteRow(numberOfRows);
+//     for (counter2; counter2 < table.rows.length-1; counter2++ ){
+//         table.rows[numberOfRows].cells[3].innerText=counter2;
+//         // table.rows[numberOfRows].cells[4].innerHTML="<button onclick='removeRow("+counter2+")'class='buttonremove'>remove</button>";
+//         table.rows[numberOfRows].cells[4].innerHTML="<img onclick = 'removeRow("+counter2+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
+//     }
+//     updatetotale(parseFloat(p),-1);
+// }
+
 function updatetotale(x,y){   
     sum=sum +(x*y);
    var total=document.getElementById("total");
@@ -160,12 +173,12 @@ function updatetotale(x,y){
 function checkout(){
     alert("the total is "+sum+"$");
     sum=0; 
-    var counter3=table.rows.length-1; 
-     for (var i=1;i<counter3;i++){                  
-        table.deleteRow(1);
+    // var counter3=table.rows.length-1; 
+     for (var i=0; i < tbody.length; i++){                  
+        tbody.delete(-1);
      }
     CartToggle();
-    counter=1;
+    counter=1; //useless
     updatetotale(0,0);
    }
 function ShowLogin() {

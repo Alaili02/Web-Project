@@ -84,13 +84,17 @@
 		</div>
 		<div id="cart" class="cart">
 			<table id="cart1">
-				<tr>
-					<td>Product</td>
-					<td>Quantity</td>
-					<td>Price</td>
-					<td>ID</td>
-					<td>   </td>
-				</tr>
+				<thead>
+					<tr>
+						<th>Product</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>ID</th>
+						<th>   </th>
+					</tr>
+				</thead>
+				<tbody id ="ProductsCartBody">
+				</tbody>
 				<tfoot>
 					<td colspan="2" id="total">Total: $0.00</td>
 					<td colspan="3" id = "CheckOut"><button onclick=checkout()>Check Out</button></td>
