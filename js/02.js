@@ -62,8 +62,11 @@ function start() {
     let item10= new item("KONO DIO DA","10","images/KonoDioDa.jpg");  
     let item11= new item("Someone has eaten my cake","20","images/Crime.png"); 
     let item12= new item("We're Doomed","10","images/Doomed.png");  
+    //loadItems();
 }
-
+var sum=0;
+var counter=1;
+var table=document.getElementById("cart1"); 
 var CdropDown1 = document.getElementById("Category1");
 var CC1 = document.getElementById("Category1Container");
 var CdropDown2 = document.getElementById("Category2");
@@ -98,8 +101,6 @@ function hide(e,parent) {
         parent.classList.remove("active");
     }
 }
-
-
 function CartToggle() {
     var cart = document.getElementById("cart");
     var mainContent = document.getElementById("MainContent");
@@ -114,11 +115,10 @@ function CartToggle() {
         document.getElementById("CartBtn").classList.add("active");
     }
 }
-var counter=1;
+
 function AddToCart(name,price) {
     if(cart.classList.contains("updatedcart")){}
-   else{ CartToggle();}
-    var table = document.getElementById("cart1");    
+   else{ CartToggle();}  
     var row = table.insertRow(counter);    
     var cell1 = row.insertCell(0);    
     var cell2 = row.insertCell(1);
@@ -132,12 +132,11 @@ function AddToCart(name,price) {
     cell4.innerHTML=counter;
     // cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
     cell5.innerHTML = "<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
-    updatetotale(x, parseFloat(price));    
-    counter++;
+     counter++;
+    updatetotale(x, parseFloat(price)); 
 }
 function removeRow(numberOfRows) {
     counter--;
-    table = document.getElementById("cart1");
     console.log(numberOfRows);
     var p =table.rows[numberOfRows].cells[2].innerText;
     var counter2 =parseFloat(table.rows[numberOfRows].cells[3].innerText);
@@ -147,28 +146,24 @@ function removeRow(numberOfRows) {
         // table.rows[numberOfRows].cells[4].innerHTML="<button onclick='removeRow("+counter2+")'class='buttonremove'>remove</button>";
         table.rows[numberOfRows].cells[4].innerHTML="<img onclick = 'removeRow("+counter2+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
      }
-
     updatetotale(parseFloat(p),-1);
 }
-var sum=0;
 function updatetotale(x,y){   
     sum=sum +(x*y);
    var total=document.getElementById("total");
-   var checkout=document.getElementById("CheckOut");
    total.innerHTML="Total:"+sum+"$";
-   checkout.innerHTML="<button onclick='checkout()'>Check Out</button>";
+   //saveItems();
 }
 function checkout(){
     alert("the total is "+sum+"$");
-    sum=0;
-    updatetotale(0,0);
-    var table=document.getElementById("cart1");  
+    sum=0; 
     var counter3=table.rows.length-1; 
      for (var i=1;i<counter3;i++){                  
         table.deleteRow(1);
      }
     CartToggle();
     counter=1;
+    updatetotale(0,0);
    }
 function ShowLogin() {
     var blanket = document.createElement("div");
@@ -194,3 +189,49 @@ function Login() {
         document.getElementById("Username").innerHTML = username;
     }
 }
+/*function saveItems() {
+    var items = [];
+    var table=document.getElementById("cart1"); 
+    for (var i = 1, n = table.rows.length-1; i < n; i++) {
+        items.push(
+          { 
+              itemName: table.rows[i].cells[0].innerHTML,
+              quantity: table.rows[i].cells[1].innerHTML,
+              price: table.rows[i].cells[2].innerHTML,
+              id: table.rows[i].cells[3].innerHTML ,
+              remove: table.rows[i].cells[4].innerHTML,
+
+          });
+    }
+    localStorage.setItem("lastRows",table.rows[table.rows.length-1].cells[0].innerHTML);
+    localStorage.setItem("items", JSON.stringify(items));
+    localStorage.setItem("Counter", counter);
+    localStorage.setItem("sum",sum);
+}
+function loadItems() {
+    if(window.localStorage.length == 0) {
+        return 
+    }
+    sum=localStorage.getItem("sum");
+   counter = localStorage.getItem("Counter");
+    var table=document.getElementById("cart1"); 
+    retrievedData = localStorage.getItem("items")
+    data = JSON.parse(retrievedData)
+  
+    for (var i = 1; i < data.length; i++) {
+        var row = table.insertRow(i);  
+        var itemName = row.insertCell(0);
+        var quantity = row.insertCell(1);
+        var price = row.insertCell(2);
+        var id = row.insertCell(3);
+        var remove = row.insertCell(4);
+  
+        itemName.innerHTML = data[i].itemName;
+        quantity.innerHTML = data[i].quantity;
+        price.innerHTML = data[i].price;
+        id.innerHTML = data[i].id;
+        remove.innerHTML = data[i].remove;
+    }
+    
+    table.rows[table.rows.length-1].cells[0].innerHTML=localStorage.getItem("lastRows");
+  }*/
