@@ -138,13 +138,14 @@ function AddToCart(name,price) {
 function removeRow(numberOfRows) {
     counter--;
     table = document.getElementById("cart1");
+    console.log(numberOfRows);
     var p =table.rows[numberOfRows].cells[2].innerText;
     var counter2 =parseFloat(table.rows[numberOfRows].cells[3].innerText);
     table.deleteRow(numberOfRows);
      for (counter2;counter2<table.rows.length-1;counter2++ ){
         table.rows[numberOfRows].cells[3].innerText=counter2;
         // table.rows[numberOfRows].cells[4].innerHTML="<button onclick='removeRow("+counter2+")'class='buttonremove'>remove</button>";
-        table.rows[numberOfRows].cells[4].innerHTML="<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
+        table.rows[numberOfRows].cells[4].innerHTML="<img onclick = 'removeRow("+counter2+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
      }
 
     updatetotale(parseFloat(p),-1);
