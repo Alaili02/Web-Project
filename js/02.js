@@ -10,7 +10,10 @@ class item {
         var priceE=this.price;
         var ItemE = document.createElement("div");
         var hoverDivE = document.createElement("div");
-        var hoverSpanE = document.createElement("span");
+
+        // var hoverSpanE = document.createElement("span");
+        var hoverImgE = document.createElement("img");
+
         var figureContainerE = document.createElement("figure");
         var productImageE = document.createElement("img");
         var productNameE = document.createElement("figcaption");
@@ -20,8 +23,8 @@ class item {
     
         ItemE.classList.add("Item");
         hoverDivE.classList.add("ShowOnHover");
-        hoverSpanE.addEventListener("click", function(){AddToCart(nameE,priceE)}, false);
-        hoverSpanE.innerText = "Add To Cart";
+        hoverImgE.addEventListener("click", function(){AddToCart(nameE,priceE)}, false);
+        hoverImgE.src="./images/icons/cart_black.png";
     
         productImageE.classList.add("ProductImage");
         productImageE.src = this.src;
@@ -36,7 +39,7 @@ class item {
         document.getElementById("Items").appendChild(ItemE);
         ItemE.appendChild(figureContainerE);
         ItemE.appendChild(hoverDivE);
-        hoverDivE.appendChild(hoverSpanE);
+        hoverDivE.appendChild(hoverImgE);
         figureContainerE.appendChild(productImageE);
         figureContainerE.appendChild(productNameE);
         productNameE.appendChild(nameLinkE);
@@ -55,6 +58,10 @@ function start() {
     let item4= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item7= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item8= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");   
+    let item9= new item("KumaKuma Bear","20","images/KumaKuma.png");  
+    let item10= new item("KONO DIO DA","10","images/KonoDioDa.jpg");  
+    let item11= new item("Someone has eaten my cake","20","images/Crime.png"); 
+    let item12= new item("We're Doomed","10","images/Doomed.png");  
 }
 
 var CdropDown1 = document.getElementById("Category1");
@@ -123,7 +130,8 @@ function AddToCart(name,price) {
     cell2.innerHTML =x;
     cell3.innerHTML = parseFloat(price)*x;
     cell4.innerHTML=counter;
-    cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
+    // cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
+    cell5.innerHTML = "<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
     updatetotale(x, parseFloat(price));    
     counter++;
 }
@@ -135,7 +143,8 @@ function removeRow(numberOfRows) {
     table.deleteRow(numberOfRows);
      for (counter2;counter2<table.rows.length-1;counter2++ ){
         table.rows[numberOfRows].cells[3].innerText=counter2;
-        table.rows[numberOfRows].cells[4].innerHTML="<button onclick='removeRow("+counter2+")'class='buttonremove'>remove</button>";
+        // table.rows[numberOfRows].cells[4].innerHTML="<button onclick='removeRow("+counter2+")'class='buttonremove'>remove</button>";
+        table.rows[numberOfRows].cells[4].innerHTML="<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
      }
 
     updatetotale(parseFloat(p),-1);
@@ -144,7 +153,9 @@ var sum=0;
 function updatetotale(x,y){   
     sum=sum +(x*y);
    var total=document.getElementById("total");
-   total.innerHTML="Total:"+sum+"$  <button id='b1'onclick='checkout()'>checkout</button>";
+   var checkout=document.getElementById("CheckOut");
+   total.innerHTML="Total:"+sum+"$";
+   checkout.innerHTML="<button onclick='checkout()'>Check Out</button>";
 }
 function checkout(){
     alert("the total is "+sum+"$");

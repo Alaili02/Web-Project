@@ -19,25 +19,44 @@
 
 #NavBar button:nth-child(3) {margin-left: auto;}
 #NavBar button {
-    font-size:1.5em;
+    box-sizing: border-box;
     padding: 6px 12px;
+    font-size: 2rem;
     cursor: pointer;
     background-color:var(--color-B);
-    color: white;
+    color: var(--color-A);
     border: none;
     transition: background-color 0.1s ease-in-out;
     outline: none;
 }
 
-#NavBar button:hover{background-color: var(--color-G_L);}
+#NavBar button:hover{background-color: var(--color-G-Darker);}
 #NavBar #CartBtn.active {background-color: var(--color-G_F);}
 
-#NavBar div#logo{height: 100%;}
+#NavBar div#logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 #NavBar div#logo a{
     display: block;
-
-    padding: 6px 12px;
     font-size: 2.5rem;
-    color: var(--color-G_F);
+    color: var(--color-A);
     text-decoration: none;
 }
+
+#NavBar div#SideButton {
+    height: 100%;
+    width: var(--nav-height);
+    cursor: pointer;
+}
+
+#NavBar div#SideButton img {
+    box-sizing: border-box;
+    padding: 1vw;
+    width: var(--nav-height);
+    transition: transform 0.2s ease;
+    filter: invert(91%) sepia(7%) saturate(149%) hue-rotate(245deg) brightness(100%) contrast(84%);
+}
+#NavBar div#SideButton img.pressed {transform: rotate(-90deg);}

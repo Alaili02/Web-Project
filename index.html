@@ -13,7 +13,10 @@
 	</head>
 	<body>
 		<div id = "NavBar">
-			<button id ="SideButton">Click</button>
+			<!-- <button id ="SideButton">Click</button> -->
+			<div id = "SideButton">
+				<img src="images/icons/menu_black.png" />
+			</div>
 			<div id = "logo">
 				<a href = "index.html">Home</a>
 			</div>
@@ -56,13 +59,28 @@
 		</div>			
 		<div id = "MainContent">
 			<form id = "searchDiv" method = "GET" action = "">
-				<input type = "seach" name = "searchQ" placeholder = "Search" class = "searchInput">
+				<input type = "search" name = "searchQ" placeholder = "Search" class = "searchInput">
 				<input type="image" value = "submit" src = "images/search-img-w.png">
 			</form>
-			<h1>Popular Items</h1>
 			<div id = "Items">
 				<!--Javascript scipt fills area this with items-->
-			</div>
+				<div id="Items">
+					<!--Javascript scipt fills area this with items-->
+				<!-- <div class="Item">
+					<figure>
+						<img class="ProductImage" src="images/phones/phone1.jpg">
+						<figcaption class="ProductName">
+							<a href="www.google.com">Samsung Galaxy S9</a>
+						</figcaption>
+						<figcaption class="ProductPrice">
+							<a href="www.google.com">10</a>
+						</figcaption>
+					</figure>
+					<div class="ShowOnHover">
+						<span>Add To Cart</span>
+					</div>
+				</div>
+			</div> -->
 		</div>
 		<div id="cart" class="cart">
 			<table id="cart1">
@@ -70,11 +88,12 @@
 					<td>Product</td>
 					<td>Quantity</td>
 					<td>Price</td>
-					<td>id</td>
+					<td>ID</td>
 					<td>   </td>
 				</tr>
 				<tfoot>
-					<td colspan="6" id="total">Total=0.00$</td>
+					<td colspan="2" id="total">Total: $0.00</td>
+					<td colspan="3" id = "CheckOut"></td>
 				</tfoot>
 			</table>
 		</div>		
@@ -95,6 +114,7 @@
         </div>
 		<script>
 			let SideButton = document.getElementById("SideButton");
+			let SideButtonImage = document.querySelector("#SideButton img");
 			let MainContent = document.getElementById("MainContent");
 			let Navbar = document.getElementById("NavBar");
 			let SideMenu = document.getElementById("SideMenu");
@@ -112,10 +132,12 @@
 					MainContent.classList.add("Shifted");
 					SideMenu.classList.add("Shifted");
 					Navbar.classList.add("Shifted");
+					SideButtonImage.classList.add("pressed");
 				} else {
 					MainContent.classList.remove("Shifted");
 					SideMenu.classList.remove("Shifted");
 					Navbar.classList.remove("Shifted");
+					SideButtonImage.classList.remove("pressed");
 				}
 			}
 		</script>

@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 	:root {
-		--color-A:#dfd9e0;
-		--color-B:#262b30; /*Background Color*/
-		--color-G_F:#29ce29;
-		--color-G_L:#29ce29b3;
-		--color-C:#161A1D; /*Item BG Color*/
-		--color-D:#202528; /**/
-		--color-R: red;
+		--color-A:#dfd9e0; /*--color-B */
+		--color-B:#202020; /*Background Color Navbar and product name+price old:#262b30*/
+		--color-B-Darker: #0e0e0e; /*sidebar selected children hover */
+		--color-G_F:#3aabe0; /* Home search icon, NavBar top border old:#29ce29*/
+		--color-G-Darker:#2d85ad; /*Navbar buttons Hover*/
 		--nav-height: 10vh;
 		--sidebar-width: 15vw;
-		--cart-width: 20vw;
+		--cart-width: 25vw;
 	}	
 	* {
 		margin: 0;
@@ -35,33 +33,33 @@
 		position:fixed;
 	}
 
-	div form {
-		display:block;
-		flex: 0 0 50%;
-		margin: 0px 5%;
-		height: 56px;
+	div form#searchDiv {
+		display:flex;
+		margin: 0px 5vw;
+		height: 8vh;
+		margin-top: 2vh;
 		padding: 12px 0;
 	}
-    div form input[value=submit] {
+    div form#searchDiv input[value=submit] {
 		display: block;
+		box-sizing: border-box;
+		height: 100%;
 		background-color: var(--color-G_F);
-		font-size: 1em;
-		height: 38px;
-		padding:4px;
+		font-size: 1rem;
+		padding:1.5vh;
 		border: none;
 		cursor: pointer;
-		border-radius: 0px 10px 10px 0px;
+		border-radius: 0px 6px 6px 0px;
     }
 
-    .searchInput {
+    form#searchDiv .searchInput {
 		display: block;
-		border-radius: 10px 0px 0px 10px;
-		float: left;
-        height: 30px;
-        width: 80%;
-        clear: both;
+		border-radius: 6px 0px 0px 6px;
+        height: 100%;
+        flex: 1;
 		border: none;
-        color: black;
+		outline: none;
+        color: var(--color-B);
 		padding: 8px;
 		font-size:1.5em;
 	}
@@ -70,14 +68,10 @@
 		width:50px;
 		color: black;
 	}
-	.buttonremove{
-		background-color: red;
-		color: black;
-		border-color: red;
-	}
+
 	ul {
 		list-style:none;
-		background-color: var(--color-D);
+		background-color: var(--color-B);
 		height: 100%;
 	}
 	.hidden {

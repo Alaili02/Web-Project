@@ -17,16 +17,16 @@
     cursor: pointer;
     transition: background-color 0.1s ease-in-out;
 }
-#SideMenu li.dropDown:hover {background-color: var(--color-C);}
-#SideMenu li.dropDown.active:hover {background-color: var(--color-G_L);}
+#SideMenu li.dropDown:hover {background-color: var(--color-G_F);}
+#SideMenu li.dropDown.active:hover {background-color: var(--color-G_F);}
 #SideMenu li a {
     display: block;
     font-weight: bold;
     padding: 16px;
-    background-color: var(--color-C);
+    background-color: var(--color-B);
     color: white;
     text-align: center;
     text-decoration:none;
     transition: background-color 0.1s ease-in-out;
 }
-#SideMenu li a:hover {background-color: #0c0e0f;}
+#SideMenu li a:hover {background-color: var(--color-B-Darker);}
