@@ -58,10 +58,6 @@ function start() {
     let item4= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item7= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");
     let item8= new item ("Samsung Galaxy S9","999","images/phones/phone1.jpg");   
-    let item9= new item("KumaKuma Bear","20","images/KumaKuma.png");  
-    let item10= new item("KONO DIO DA","10","images/KonoDioDa.jpg");  
-    let item11= new item("Someone has eaten my cake","20","images/Crime.png"); 
-    let item12= new item("We're Doomed","10","images/Doomed.png");  
     //loadItems();
 }
 var sum=0;
@@ -127,11 +123,12 @@ function AddToCart(name,price) {
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
+        //var cell5 = row.insertCell(4);
         cell1.innerHTML = name;    
         cell2.innerHTML = promptQuantity;
         cell3.innerHTML = parseFloat(price)*promptQuantity;
-        cell4.innerHTML = counter;
+        //cell4.innerHTML = counter;
+
         // cell5.innerHTML ="<button onclick='removeRow("+counter+")'class='buttonremove'>remove</button>" ;
         // cell5.innerHTML = "<img onclick = 'removeRow("+counter+")' class = 'cartItemClear' src='./images/icons/clear_black.png'/>";
         let clearImage = document.createElement("img");
@@ -141,7 +138,7 @@ function AddToCart(name,price) {
             row.remove();
             updatetotale(parseFloat(price), -promptQuantity);
         }, false);
-        cell5.appendChild(clearImage);
+        cell4.appendChild(clearImage);
         // counter++;
         updatetotale(promptQuantity, parseFloat(price));    
     }

@@ -9,11 +9,11 @@
 		<link rel="stylesheet" type="text/css" href="./css/Items.css">
 		<link rel="stylesheet" type="text/css" href="./css/Cart.css">
 		<script type = "text/javascript" src = "./js/02.js" defer></script>
+		<!-- <script type = "text/javascript" src = "./js/DetangledSpaghetti.js" defer></script> -->
 		<title>Experiments</title>
 	</head>
 	<body>
 		<div id = "NavBar">
-			<!-- <button id ="SideButton">Click</button> -->
 			<div id = "SideButton">
 				<img src="images/icons/menu_black.png" />
 			</div>
@@ -23,6 +23,7 @@
 			<button onclick="window.location.href='pages/Form2.html';">Register</button>
 			<button onclick="ShowLogin()">Login</button>
 			<button id = "CartBtn" onclick="CartToggle()">Cart</button>
+			<!-- <button id = "CartBtn">Cart</button> -->
 		</div>
 		<div id = "SideMenu">
 			<ul>
@@ -64,23 +65,7 @@
 			</form>
 			<div id = "Items">
 				<!--Javascript scipt fills area this with items-->
-				<div id="Items">
-					<!--Javascript scipt fills area this with items-->
-				<!-- <div class="Item">
-					<figure>
-						<img class="ProductImage" src="images/phones/phone1.jpg">
-						<figcaption class="ProductName">
-							<a href="www.google.com">Samsung Galaxy S9</a>
-						</figcaption>
-						<figcaption class="ProductPrice">
-							<a href="www.google.com">10</a>
-						</figcaption>
-					</figure>
-					<div class="ShowOnHover">
-						<span>Add To Cart</span>
-					</div>
-				</div>
-			</div> -->
+			</div>
 		</div>
 		<div id="cart" class="cart">
 			<table id="cart1">
@@ -89,15 +74,17 @@
 						<th>Product</th>
 						<th>Quantity</th>
 						<th>Price</th>
-						<th>ID</th>
-						<th>   </th>
+						<th>Remove</th>
 					</tr>
 				</thead>
 				<tbody id ="ProductsCartBody">
 				</tbody>
 				<tfoot>
 					<td colspan="2" id="total">Total: $0.00</td>
-					<td colspan="3" id = "CheckOut"><button onclick=checkout()>Check Out</button></td>
+					<td colspan="3" id = "CheckOut">
+						<button onclick=checkout()>Check Out</button>
+						<!-- <button>Check Out</button> -->
+					</td>
 				</tfoot>
 			</table>
 		</div>		
