@@ -8,8 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="./css/MainContent.css">
 		<link rel="stylesheet" type="text/css" href="./css/Items.css">
 		<link rel="stylesheet" type="text/css" href="./css/Cart.css">
-		<script type = "text/javascript" src = "./js/02.js" defer></script>
-		<!-- <script type = "text/javascript" src = "./js/DetangledSpaghetti.js" defer></script> -->
+		<!-- <script type = "text/javascript" src = "./js/02.js" defer></script> -->
+		<script type = "text/javascript" src = "./js/DetangledSpaghetti.js" defer></script>
 		<title>Experiments</title>
 	</head>
 	<body>
@@ -22,8 +22,8 @@
 			</div>
 			<button onclick="window.location.href='pages/Form2.html';">Register</button>
 			<button onclick="ShowLogin()">Login</button>
-			<button id = "CartBtn" onclick="CartToggle()">Cart</button>
-			<!-- <button id = "CartBtn">Cart</button> -->
+			<!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
+			<button id = "CartBtn">Cart</button>
 		</div>
 		<div id = "SideMenu">
 			<ul>
@@ -64,6 +64,22 @@
 				<input type="image" value = "submit" src = "images/search-img-w.png">
 			</form>
 			<div id = "Items">
+				<!-- <div class="Item">
+					<figure>
+						<img class="ProductImage" src="images/alaili/LongHairRem.png">
+						<div class = "ProductCaption">
+							<figcaption class="ProductName">
+								<a href="www.google.com">Rem</a>
+							</figcaption>
+							<figcaption class="ProductPrice">
+								<a href="www.google.com">99999</a>
+							</figcaption>
+						</div>
+					</figure>
+					<div class="ShowOnHover">
+						<img src="./images/icons/cart_black.png">
+					</div>
+				</div> -->
 				<!--Javascript scipt fills area this with items-->
 			</div>
 		</div>
@@ -82,8 +98,8 @@
 				<tfoot>
 					<td colspan="2" id="total">Total: $0.00</td>
 					<td colspan="3" id = "CheckOut">
-						<button onclick=checkout()>Check Out</button>
-						<!-- <button>Check Out</button> -->
+						<!-- <button onclick=checkout()>Check Out</button> -->
+						<button>Check Out</button>
 					</td>
 				</tfoot>
 			</table>

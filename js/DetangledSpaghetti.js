@@ -1,7 +1,7 @@
 items = [
     { 
         "name": "Rem",
-        "price": "99999",
+        "price": "9999999",
         "src": "images/alaili/LongHairRem.png"
     },
     {
@@ -10,7 +10,7 @@ items = [
         "src": "images/alaili/KonoDioDa.jpg"
     },
     {
-        "name": "Someone has eaten my cake",
+        "name": "MY CAKE",
         "price": "20",
         "src": "images/alaili/Crime.png"
     },
@@ -38,6 +38,11 @@ items = [
         "name": "Kaguya",
         "price": "69",
         "src": "images/alaili/Kaguya.png"
+    },
+    {
+        "name": "Ganyu",
+        "price": "100",
+        "src": "images/alaili/Ganyu.png"
     }
 ];
 
@@ -59,18 +64,21 @@ class item {
         var hoverImgE = document.createElement("img");
 
         var figureContainerE = document.createElement("figure");
+        var figureCaptionContainer = document.createElement("div");
         var productImageE = document.createElement("img");
         var productNameE = document.createElement("figcaption");
         var productPriceE = document.createElement("figcaption");
         var nameLinkE = document.createElement("a");
         var pricelinkE = document.createElement("a");
-    
+        
+
         ItemE.classList.add("Item");
         hoverDivE.classList.add("ShowOnHover");
         hoverImgE.src="./images/icons/cart_black.png";
 
         this.ClickListenerElement = hoverDivE;
 
+        figureCaptionContainer.classList.add("ProductCaption");
         productImageE.classList.add("ProductImage");
         productImageE.src = this.src;
         productNameE.classList.add("ProductName");
@@ -79,17 +87,21 @@ class item {
         nameLinkE.href = "www.google.com";
         nameLinkE.innerText = this.name;
         pricelinkE.href = "www.google.com";
-        pricelinkE.innerText = this.price;
+        pricelinkE.innerText = this.price + "$";
     
         container.appendChild(ItemE);
         ItemE.appendChild(figureContainerE);
         ItemE.appendChild(hoverDivE);
         hoverDivE.appendChild(hoverImgE);
+
         figureContainerE.appendChild(productImageE);
-        figureContainerE.appendChild(productNameE);
+
         productNameE.appendChild(nameLinkE);
-        figureContainerE.appendChild(productPriceE);
         productPriceE.appendChild(pricelinkE);
+        
+        figureCaptionContainer.appendChild(productNameE);
+        figureCaptionContainer.appendChild(productPriceE);
+        figureContainerE.appendChild(figureCaptionContainer);
     }
 }
 
@@ -117,7 +129,8 @@ class Cart {
         cell0.innerHTML = name; 
 
         let cell1 = row.insertCell(1);
-        cell1.innerHTML = quantity;
+        cell1.innerHTML = quantity; 
+        //cell1.innerHTML = "<input type='number' value='"+quantity+"'/>"; 
 
         let cell2 = row.insertCell(2);
         cell2.innerHTML = parseFloat(price)*quantity;
