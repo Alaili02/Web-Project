@@ -138,14 +138,16 @@ class Cart {
         let cell2 = row.insertCell(2);
         cell2.innerText=price;
 
-      /* let input=document.createElement("input");
+        let input=document.createElement("input");
         input.setAttribute("type","number");
-        input.setAttribute("id","quantity");
+        // input.setAttribute("id","quantity");
         input.setAttribute("value","1");
         input.setAttribute("min","0");
         var  value=1
-        input.addEventListener("change",function(){
-            let quantity1=document.getElementById("quantity").value;
+        input.addEventListener("input",function(){
+            let quantity1 = input.value;
+            console.log(quantity1);
+
             if (quantity1==0){
                 that.UpdateTotal(-price,1);
              cell2.innerText =0;
@@ -158,11 +160,11 @@ class Cart {
                 that.UpdateTotal(-price,1);
                 var currentPrice=parseFloat( cell2.innerText);
                 console.log(parseFloat(-price)*quantity1);
-             cell2.innerText =currentPrice+ (parseFloat(-price));
+                cell2.innerText =currentPrice+ (parseFloat(-price));
             }
              value=document.getElementById("quantity").value;
         }, false);
-        cell1.appendChild(input);*/
+        cell1.appendChild(input);
         let cell3 = row.insertCell(3);
         let clearImage = document.createElement("img");
         clearImage.src = './images/icons/clear_black.png';

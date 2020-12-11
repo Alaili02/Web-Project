@@ -20,10 +20,13 @@
     -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.5); 
     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.5);
     transition: transform 0.2s ease;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
 }
 
 #MainContent #Items .Item:hover {
-    transform: scale(1.05);
+    transform: scale(1.048);
 }
 
 #MainContent #Items .Item .ShowOnHover {
@@ -31,13 +34,11 @@
     opacity: 0;
     z-index: 1;
     background-color: var(--color-B);
-    backdrop-filter: blur(6px);
     border-radius: 0 0px 5px 5px;
     right: 20px;
-    width: 15%;
     top: -8vh;
-    height: 8vh;
-    padding: 5px 2px 5px 2px;
+    width: fit-content;
+    height: fit-content;
     cursor: pointer;
 
     -webkit-transition: background-color 0.25s ease-in-out, opacity 0.25s ease-in-out; /* Safari prior 6.1 */
@@ -51,7 +52,8 @@
 }
 #MainContent #Items .Item .ShowOnHover img {
     margin-top: 4vh;
-    width: 100%;
+    height: 4vh;
+    padding: 0.1vw;
     filter: invert(96%) sepia(6%) saturate(180%) hue-rotate(245deg) brightness(93%) contrast(89%);
     /* filter: invert(12%) sepia(15%) saturate(1%) hue-rotate(314deg) brightness(94%) contrast(98%); */
 }
@@ -81,18 +83,16 @@
     width: 100%;
     bottom: 0;
     background-color: var(--color-B);
-    backdrop-filter: blur(6px);
     opacity: 0.75;
-    border-radius: 0px 0px 12px 12px;
 }
 
-#MainContent #Items .Item figcaption{
+#MainContent #Items .Item div.ProductCaption figcaption{
     word-wrap: normal;
     display: block;
     text-align: center;
     padding: 0px;
 }
-#MainContent #Items .Item figcaption.ProductPrice {}
+
 #MainContent #Items .Item figcaption a {
     padding-top: 2px;
     text-decoration: none;
