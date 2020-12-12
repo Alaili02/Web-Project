@@ -116,7 +116,6 @@ class Cart {
         
         this.currentTotal = 0;
 
-        this.ID=0;
         
 
         let that = this;  
@@ -126,7 +125,7 @@ class Cart {
         this.open = false;
     }
 
-    Add(name, price, quantity) {
+    Add(name, price) {
         let row = this.tbody.insertRow(-1);    
         let cell0 = row.insertCell(0);    
         cell0.innerHTML = name;
@@ -140,9 +139,11 @@ class Cart {
 
         let input=document.createElement("input");
         input.setAttribute("type","number");
-        // input.setAttribute("id","quantity");
         input.setAttribute("value","1");
         input.setAttribute("min","0");
+        input.setAttribute("max","9");
+        input.setAttribute("onkeydown","return false;");
+        this.UpdateTotal(price,1);
         var  value=1
         input.addEventListener("input",function(){
             let quantity1 = input.value;
@@ -162,7 +163,7 @@ class Cart {
                 console.log(parseFloat(-price)*quantity1);
                 cell2.innerText =currentPrice+ (parseFloat(-price));
             }
-             value=document.getElementById("quantity").value;
+             value=input.value;
         }, false);
         cell1.appendChild(input);
         let cell3 = row.insertCell(3);
@@ -172,13 +173,11 @@ class Cart {
 
         
         clearImage.addEventListener("click", function() {
-            let quantity1=document.getElementById("quantity").value;
+            let quantity1=input.value;
             row.remove();
             that.UpdateTotal(price, -quantity1);
         }, false);
         cell3.appendChild(clearImage);
-
-        this.UpdateTotal(price, quantity);
     }
 
     UpdateTotal(price, quantity) {   
@@ -220,7 +219,7 @@ function start() {
         items[i].ClickListenerElement.addEventListener("click", function() {
             //let quantity = window.prompt("how much?","1");
            // if (quantity != null && quantity > 0) {
-                myCart.Add(items[i].name, items[i].price, 1);
+                myCart.Add(items[i].name, items[i].price);
                 if (!myCart.open) myCart.Toggle();
            // }
         })
