@@ -151,7 +151,8 @@ class Cart {
 
             if (quantity1==0){
                 that.UpdateTotal(-price,1);
-             cell2.innerText =0;
+                cell2.innerText =0;
+                row.remove();
                 
             }
            else if(value<quantity1){
