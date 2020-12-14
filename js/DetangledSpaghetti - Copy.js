@@ -176,6 +176,9 @@ class Cart {
                     break;
             }
         })
+        // NO PASTING VALUES EITHER
+        input.addEventListener("paste", function(){event.preventDefault();});
+
         input.addEventListener("input",function(){
             // if the input value doesnt exist then assume its 0 so total looks right
             let inputQuantity = (input.value)? parseFloat(input.value):0;
