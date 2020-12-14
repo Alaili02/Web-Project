@@ -195,6 +195,17 @@ class Cart {
                     newCartContent.push(that.cartContent[i]);
                 }
             }
+            // Alternative way of doing the above using map
+            // let newCartContent = that.cartContent.map((item) => {
+            //     if (item.name == name) {
+            //         return {
+            //             "name": name,
+            //             "price": price,
+            //             "quantity": parseFloat(inputQuantity)
+            //         }
+            //     } else { return item; }
+            // });
+
             that.cartContent = newCartContent;
             that.RefreshCartTotal();
             console.log(that.cartContent);
