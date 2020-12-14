@@ -13,6 +13,7 @@
 		<title>Experiments</title>
 	</head>
 	<body>
+		<!--- NavBar --->
 		<div id = "NavBar">
 			<div id = "SideButton">
 				<img src="images/icons/menu_black.png" />
@@ -25,6 +26,8 @@
 			<!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
 			<button id = "CartBtn">Cart</button>
 		</div>
+
+		<!--- SideMenu --->
 		<div id = "SideMenu">
 			<ul>
 				<li class = "dropDown" id = "Category1">Video Games</li>
@@ -58,6 +61,8 @@
 				</li>		
 			</ul>
 		</div>			
+
+		<!--- Main Content --->
 		<div id = "MainContent">
 			<form id = "searchDiv" method = "GET" action = "">
 				<input type = "search" name = "searchQ" placeholder = "Search" class = "searchInput">
@@ -83,6 +88,8 @@
 				<!--Javascript scipt fills area this with items-->
 			</div>
 		</div>
+
+		<!--- Cart --->
 		<div id="cart" class="cart">
 			<table id="cart1">
 				<thead>
@@ -104,6 +111,8 @@
 				</tfoot>
 			</table>
 		</div>		
+
+		<!--- Login --->
 		<div id="loginBox">
             <h1>Login</h1>
             <Form method ="POST" action = "#" autocomplete="on" onsubmit="Login()">
@@ -119,34 +128,7 @@
                     <input type="button" onclick="window.location.href='pages/Form2.html';" value="No account? Register here" >
             </Form>
         </div>
-		<script>
-			let SideButton = document.getElementById("SideButton");
-			let SideButtonImage = document.querySelector("#SideButton img");
-			let MainContent = document.getElementById("MainContent");
-			let Navbar = document.getElementById("NavBar");
-			let SideMenu = document.getElementById("SideMenu");
-			var CartBtn = document.getElementById("cart");
-	
-			SideButton.addEventListener('click', toggleSideMain);
-			function toggleSideMain() {
-				if(CartBtn.classList.contains("updatedcart")) {
-					MainContent.classList.remove("CartShift");
-					cart.classList.remove("updatedcart");
-					cart.classList.add("cart");
-					document.getElementById("CartBtn").classList.remove("active");
-				}
-				if (!MainContent.classList.contains("Shifted")) {
-					MainContent.classList.add("Shifted");
-					SideMenu.classList.add("Shifted");
-					Navbar.classList.add("Shifted");
-					SideButtonImage.classList.add("pressed");
-				} else {
-					MainContent.classList.remove("Shifted");
-					SideMenu.classList.remove("Shifted");
-					Navbar.classList.remove("Shifted");
-					SideButtonImage.classList.remove("pressed");
-				}
-			}
-		</script>
+
+		<script src = "./js/ShiftPage.js"></script>
 	</body>
 </html>

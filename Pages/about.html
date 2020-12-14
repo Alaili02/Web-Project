@@ -6,8 +6,13 @@
     <link rel="stylesheet" type="text/css" href="../css/style1.css">
     <link rel="stylesheet" type="text/css" href="../css/NavBar.css">
     <link rel="stylesheet" type="text/css" href="../css/SideMenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/MainContent.css">
+    <link rel="stylesheet" type="text/css" href="../css/Items.css">
+    <link rel="stylesheet" type="text/css" href="../css/Cart.css">
+    <script type = "text/javascript" src = "../js/DetangledSpaghetti - Copy.js" defer></script>
 </head>
 <body>
+    <!--- NavBar --->
     <div id = "NavBar">
         <div id = "SideButton">
             <img src="../images/icons/menu_black.png" />
@@ -20,6 +25,8 @@
         <!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
         <button id = "CartBtn">Cart</button>
     </div>
+
+    <!--- SideMenu --->
     <div id = "SideMenu">
         <ul>
             <li class = "dropDown" id = "Category1">Video Games</li>
@@ -44,17 +51,41 @@
                     <li><a href = "../pages/phones.html">Phones</a></li>
                     <li><a href = "../pages/PrebuiltComputers.html">Prebuilt Computers</a></li>
                 </ul>
-            </li>	
+            </li>
             <li class = "dropDown" id = "Category4">Others</li>
             <li class = "container hidden" id = "Category4Container">
                 <ul>
                     <li><a href = "../pages/Books.html">Books</a></li>
                 </ul>
-            </li>		
+            </li>
         </ul>
-    </div>			
+    </div>
 
+    <!--- Cart --->
+    <div id="cart" class="cart">
+        <table id="cart1">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody id ="ProductsCartBody">
+            </tbody>
+            <tfoot>
+            <td colspan="2" id="total">Total: $0.00</td>
+            <td colspan="3" id = "CheckOut">
+                <!-- <button onclick=checkout()>Check Out</button> -->
+                <button>Check Out</button>
+            </td>
+            </tfoot>
+        </table>
+    </div>
 
+    <!--- MainContent -->
+    <div id = "MainContent">
 		<div class="contentAB">
 			<div id="about">
                 <h1> About us</h1>
@@ -73,8 +104,7 @@
 				<p>This online delivery service will finally help you save time and avoid traffic jams. We are proud to make all this possible thanks to our delivery team and online payment-processing partner.</p>
 			</div>
 		</div>
-
-
-    </body>
-            
+    </div>
+    <script src = "../js/ShiftPage.js"></script>
+</body>
 </html>
