@@ -163,8 +163,21 @@ class Cart {
         // input.setAttribute("onkeydown","return false;");
         // this.UpdateTotal(price,1);
         // var  value=1
+        input.addEventListener("keydown",function(event){
+            // REJECT INPUT THATS NOT A NUMBER
+            switch (event.key) {
+                case "-":
+                case "+":
+                case ".":
+                    console.log("Rejected invalid input");
+                    event.preventDefault();
+                    break;
+                default:
+                    break;
+            }
+        })
         input.addEventListener("input",function(){
-            // if (!input.value) input.value = 1;
+            // if the input value doesnt exist then assume its 0 so total looks right
             let inputQuantity = (input.value)? parseFloat(input.value):0;
             // replace the modified item with the updated item
             let newCartContent = [];
@@ -186,8 +199,8 @@ class Cart {
         input.addEventListener("blur", function(event) {
             // this events occurs when the user presses out of the input, if the value he left was empty
             // or the value is 0 => delete the row, remove it from the cart, and refresh the cart
-            if (event.target.value == "" || event.target.value == 0) {
-                console.log("Quantity entered is NaN so item was removed");
+            if (event.target.value == "" || event.target.value <= 0) {
+                console.log("Quantity entered is NaN or less than or equal to 0 so item was removed");
                 row.remove();
                 that.cartContent = that.cartContent.filter(function(item) {return item.name != name});
                 that.RefreshCartTotal();
