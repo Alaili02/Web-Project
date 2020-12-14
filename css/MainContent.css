@@ -2,7 +2,6 @@
 #MainContent.CartShift {margin-right: var(--cart-width);}
 #MainContent {
     margin-top: var(--nav-height);
-    overflow: hidden;
     transition: transform 0.2s ease, margin-right 0.2s ease;
 }
 

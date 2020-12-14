@@ -1,48 +1,43 @@
 items = [
     { 
-        "name": "Rem",
-        "price": "9",
-        "src": "images/alaili/LongHairRem.png"
+        "name": "Bulbasaur",
+        "price": 20,
+        "src": "images/Pokemon/Bulbasaur.png"
     },
     {
-        "name": "KONO DIO DA",
-        "price": "10",
-        "src": "images/alaili/KonoDioDa.jpg"
+        "name": "Charmander",
+        "price": 10,
+        "src": "images/Pokemon/Charmander.png"
     },
     {
-        "name": "MY CAKE",
-        "price": "20",
-        "src": "images/alaili/Crime.png"
+        "name": "Squirtle",
+        "price": 20,
+        "src": "images/Pokemon/Squirtle.png"
     },
     {
-        "name": "We're Doomed",
-        "price": "10",
-        "src": "images/alaili/Doomed.png"
+        "name": "Caterpie",
+        "price": 10,
+        "src": "images/Pokemon/Caterpie.png"
     },
     {
-        "name": "KumaKuma Bear",
-        "price": "120",
-        "src": "images/alaili/KumaKuma.png"
+        "name": "Rattata",
+        "price": 120,
+        "src": "images/Pokemon/Rattata.png"
     },
     {
-        "name": "Akemi",
-        "price": "25",
-        "src": "images/alaili/SparklyAkemi.png"
+        "name": "Weedle",
+        "price": 25,
+        "src": "images/Pokemon/Weedle.png"
     },
     {
-        "name": "Mayushi",
-        "price": "02",
-        "src": "images/alaili/Mayushi.png"
+        "name": "Pidgeotto",
+        "price": 15,
+        "src": "images/Pokemon/Pidgeotto.png"
     },
     {
-        "name": "Kaguya",
-        "price": "69",
-        "src": "images/alaili/Kaguya.png"
-    },
-    {
-        "name": "Ganyu",
-        "price": "100",
-        "src": "images/alaili/Ganyu.png"
+        "name": "Pikachu",
+        "price": 100,
+        "src": "images/Pokemon/Pikachu.png"
     }
 ];
 
@@ -114,9 +109,8 @@ class Cart {
         this.cartBtn = document.getElementById("CartBtn");
         this.cartCheckoutBtn = document.querySelector("td#CheckOut button");
         
+        this.cartContent = [];
         this.currentTotal = 0;
-
-        
 
         let that = this;  
         this.cartBtn.addEventListener("click", function(){that.Toggle();}, false);
@@ -125,13 +119,37 @@ class Cart {
         this.open = false;
     }
 
+    RefreshCartTotal() {
+        this.currentTotal = 0;
+        // iterate over whole cart to recalculate total
+        for (let i = 0; i < this.cartContent.length; i++) {
+            this.currentTotal += this.cartContent[i].price * this.cartContent[i].quantity;
+        }
+        this.total.innerHTML="Total: " + this.currentTotal + "$";
+    }
+
     Add(name, price) {
-        let row = this.tbody.insertRow(-1);    
-        let cell0 = row.insertCell(0);    
-        cell0.innerHTML = name;
-        
+        let AllDuplicates = this.cartContent.filter(function(item) {return item.name == name;});
+        // Check if the item already exists in cart, if its not => add it to the cart
+        if (AllDuplicates.length > 0) {
+            console.log(AllDuplicates[0].name + " already exists in cart so it wasnt added");
+            return; //item already exists in cart so do nothing and gtfo
+        } else {
+            // item not already in cart so push it and refresh cart
+            this.cartContent.push({
+                "name": name,
+                "price": price,
+                "quantity": 1
+            });
+            this.RefreshCartTotal();
+            console.log("Added " + name + " to cart contents");
+        }
 
         let that = this;
+        let row = this.tbody.insertRow(-1);
+
+        let cell0 = row.insertCell(0);    
+        cell0.innerHTML = name;
 
         let cell1 = row.insertCell(1);
         let cell2 = row.insertCell(2);
@@ -140,31 +158,69 @@ class Cart {
         let input=document.createElement("input");
         input.setAttribute("type","number");
         input.setAttribute("value","1");
-        input.setAttribute("min","0");
-        input.setAttribute("max","9");
-        input.setAttribute("onkeydown","return false;");
-        this.UpdateTotal(price,1);
-        var  value=1
-        input.addEventListener("input",function(){
-            let quantity1 = input.value;
-            console.log(quantity1);
+        input.setAttribute("min","1");
+        input.setAttribute("max","999");
+        // input.setAttribute("onkeydown","return false;");
+        // this.UpdateTotal(price,1);
+        // var  value=1
+        input.addEventListener("keydown",function(event){
+            // REJECT INPUT THATS NOT A NUMBER
+            switch (event.key) {
+                case "-":
+                case "+":
+                case ".":
+                    console.log("Rejected invalid input");
+                    event.preventDefault();
+                    break;
+                default:
+                    break;
+            }
+        })
+        // NO PASTING VALUES EITHER
+        input.addEventListener("paste", function(){event.preventDefault();});
 
-            if (quantity1==0){
-                that.UpdateTotal(-price,1);
-             cell2.innerText =0;
-                
+        input.addEventListener("input",function(){
+            // if the input value doesnt exist then assume its 0 so total looks right
+            let inputQuantity = (input.value)? parseFloat(input.value):0;
+            // replace the modified item with the updated item
+            let newCartContent = [];
+            for (let i = 0; i < that.cartContent.length; i++) {
+                if (that.cartContent[i].name == name) {
+                    newCartContent.push({
+                        "name": name,
+                        "price": price,
+                        "quantity": parseFloat(inputQuantity)
+                    });
+                } else {
+                    newCartContent.push(that.cartContent[i]);
+                }
             }
-           else if(value<quantity1){
-            that.UpdateTotal(price,1);
-            cell2.innerText = parseFloat(price)*quantity1;}
-            else {
-                that.UpdateTotal(-price,1);
-                var currentPrice=parseFloat( cell2.innerText);
-                console.log(parseFloat(-price)*quantity1);
-                cell2.innerText =currentPrice+ (parseFloat(-price));
-            }
-             value=input.value;
+            // Alternative way of doing the above using map
+            // let newCartContent = that.cartContent.map((item) => {
+            //     if (item.name == name) {
+            //         return {
+            //             "name": name,
+            //             "price": price,
+            //             "quantity": parseFloat(inputQuantity)
+            //         }
+            //     } else { return item; }
+            // });
+
+            that.cartContent = newCartContent;
+            that.RefreshCartTotal();
+            console.log(that.cartContent);
         }, false);
+        input.addEventListener("blur", function(event) {
+            // this events occurs when the user presses out of the input, if the value he left was empty
+            // or the value is 0 => delete the row, remove it from the cart, and refresh the cart
+            if (event.target.value == "" || event.target.value <= 0) {
+                console.log("Quantity entered is NaN or less than or equal to 0 so item was removed");
+                row.remove();
+                that.cartContent = that.cartContent.filter(function(item) {return item.name != name});
+                that.RefreshCartTotal();
+            }
+        }, false)
+
         cell1.appendChild(input);
         let cell3 = row.insertCell(3);
         let clearImage = document.createElement("img");
@@ -173,21 +229,19 @@ class Cart {
 
         
         clearImage.addEventListener("click", function() {
-            let quantity1=input.value;
             row.remove();
-            that.UpdateTotal(price, -quantity1);
+            that.cartContent = that.cartContent.filter(function(item) {return item.name != name});
+            that.RefreshCartTotal();
         }, false);
         cell3.appendChild(clearImage);
     }
 
-    UpdateTotal(price, quantity) {   
-        this.currentTotal = this.currentTotal + (price * quantity);
-        this.total.innerHTML="Total: " + this.currentTotal + "$";
-    }
-
     Checkout(){
         alert("The total is " + this.currentTotal + "$");
-        this.UpdateTotal(this.currentTotal, -1); // Zero the current total
+
+        this.cartContent = [];
+        this.RefreshCartTotal();
+
         while(this.tbody.rows.length > 0) {                  
             this.tbody.deleteRow(0);
         }

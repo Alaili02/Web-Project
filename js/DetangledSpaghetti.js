@@ -1,48 +1,43 @@
 items = [
     { 
-        "name": "Rem",
-        "price": "9999999",
-        "src": "images/alaili/LongHairRem.png"
-    },
-    {
-        "name": "KONO DIO DA",
-        "price": "10",
-        "src": "images/alaili/KonoDioDa.jpg"
-    },
-    {
-        "name": "MY CAKE",
+        "name": "Bulbasaur",
         "price": "20",
-        "src": "images/alaili/Crime.png"
+        "src": "images/Pokemon/Bulbasaur.png"
     },
     {
-        "name": "We're Doomed",
+        "name": "Charmander",
         "price": "10",
-        "src": "images/alaili/Doomed.png"
+        "src": "images/Pokemon/Charmander.png"
     },
     {
-        "name": "KumaKuma Bear",
+        "name": "Squirtle",
+        "price": "20",
+        "src": "images/Pokemon/Squirtle.png"
+    },
+    {
+        "name": "Caterpie",
+        "price": "10",
+        "src": "images/Pokemon/Caterpie.png"
+    },
+    {
+        "name": "Rattata",
         "price": "120",
-        "src": "images/alaili/KumaKuma.png"
+        "src": "images/Pokemon/Rattata.png"
     },
     {
-        "name": "Akemi",
+        "name": "Weedle",
         "price": "25",
-        "src": "images/alaili/SparklyAkemi.png"
+        "src": "images/Pokemon/Weedle.png"
     },
     {
-        "name": "Mayushi",
-        "price": "02",
-        "src": "images/alaili/Mayushi.png"
+        "name": "Pidgeotto",
+        "price": "15",
+        "src": "images/Pokemon/Pidgeotto.png"
     },
     {
-        "name": "Kaguya",
-        "price": "69",
-        "src": "images/alaili/Kaguya.png"
-    },
-    {
-        "name": "Ganyu",
+        "name": "Pikachu",
         "price": "100",
-        "src": "images/alaili/Ganyu.png"
+        "src": "images/Pokemon/Pikachu.png"
     }
 ];
 

@@ -3,7 +3,6 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    transition: flex 0.6s ease;
 }
 
 #MainContent #Items .Item {
@@ -20,9 +19,6 @@
     -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.5); 
     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.5);
     transition: transform 0.2s ease;
-
-    -webkit-font-smoothing: subpixel-antialiased;
-    backface-visibility: hidden;
 }
 
 #MainContent #Items .Item:hover {
