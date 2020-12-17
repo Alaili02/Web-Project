@@ -1,11 +1,16 @@
 #MainContent.Shifted {transform: translate(var(--sidebar-width));}
-#MainContent.CartShift {margin-right: var(--cart-width);}
+#MainContent.CartShift {margin-right: calc(var(--cart-width) + 2vw);}
 #MainContent {
-    margin-top: var(--nav-height);
+    /*margin shorthand: top horizontal bottom*/
+    margin: var(--nav-height) 2vw 0;
     transition: transform 0.2s ease, margin-right 0.2s ease;
 }
 
-#MainContent h1 {
+#MainContent h1, #MainContent h2{
     padding:10px;
     text-align: center;
+}
+
+#MainContent h1 {
+    font-weight: 500;
 }

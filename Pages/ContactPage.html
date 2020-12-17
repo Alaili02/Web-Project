@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact us</title>
+    <link rel="stylesheet" type="text/css" href="../css/styleA.css">
+    <link rel="stylesheet" type="text/css" href="../css/style1.css">
+    <link rel="stylesheet" type="text/css" href="../css/NavBar.css">
+    <link rel="stylesheet" type="text/css" href="../css/SideMenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/MainContent.css">
+    <link rel="stylesheet" type="text/css" href="../css/Items.css">
+    <link rel="stylesheet" type="text/css" href="../css/Cart.css">
+    <script type = "text/javascript" src = "../js/Cart.js" defer></script>
+    <script src = "../js/Dynamic.js" defer></script>
+</head>
+<body>
+    <!--- NavBar --->
+    <div id = "NavBar">
+        <div id = "SideButton">
+            <img src="../images/icons/menu_black.png" alt=""/>
+        </div>
+        <div id = "logo">
+            <a href = "../Index.php">Home</a>
+        </div>
+        <button onclick="window.location.href='./Form2.html';">Register</button>
+        <button onclick="ShowLogin()">Login</button>
+        <!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
+        <button id = "CartBtn">Cart</button>
+    </div>
+
+    <!--- SideMenu --->
+    <div id = "SideMenu">
+        <ul>
+            <li class = "dropDown" id = "Category1">Video Games</li>
+            <li class = "dropDown" id = "Category2">Home Products</li>
+            <li class = "dropDown" id = "Category3">Electronics</li>
+            <li class = "dropDown" id = "Category4">Others</li>
+        </ul>
+    </div>
+
+    <!--- Cart --->
+    <div id="cart" class="cart">
+        <table id="cart1">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody id ="ProductsCartBody">
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2" id="total">Total: $0.00</td>
+                <td colspan="3" id = "CheckOut">
+                    <!-- <button onclick=checkout()>Check Out</button> -->
+                    <button>Check Out</button>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!--- MainContent -->
+    <div id="MainContent">
+        <div class="container">
+            <form action="../php/ContactForm.php" method="POST">
+                <p>
+                  <label for="full name">Full Name:</label>
+                  <input type="text" id="full name" name="fullname" placeholder="Your name.." style="width:100%;max-width:250px;" required>
+                </p>
+                <p>
+                  <label for="PhoneNumber">Phone number:</label>
+                  <input name="PhoneNumber" id="PhoneNumber" type="text" style="width:100%;max-width:250px;" placeholder="##/######"required />
+                </p>
+                <p>
+                    <label for="FromEmailAddress">Email address:</label>
+                    <input name="FromEmailAddress" id="FromEmailAddress" type="text" style="width:100%;max-width:250px;"placeholder="someone@example.com" required/>
+                </p>
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Usa">USA</option>
+                </select>
+
+                <label for="subject">Subject:</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+    </div>
+
+    <!--- Login --->
+    <div id="loginBox">
+        <h1>Login</h1>
+        <Form method ="POST" action = "#" autocomplete="on" onsubmit="Login()">
+            <div class="formElement">
+                <span>Username</span>
+                <input type="text" name = "username" id = "UsernameInput" placeholder= "Username" required>
+            </div>
+            <div class="formElement" >
+                <span>Password:</span>
+                <input type="password" name ="Password" placeholder = "Password" required>
+            </div>
+            <input type="submit" value="Login">
+            <input type="button" onclick="window.location.href='./Form2.html';" value="No account? Register here" >
+        </Form>
+    </div>
+</body>
+</html>

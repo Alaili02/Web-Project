@@ -34,7 +34,19 @@
     color: black;
     border-color: red;
 }
-
+.cart tbody#ProductsCartBody tr :nth-child(2) {
+    height: 0;
+    padding: 0;
+}
+.cart input[type=number] {
+    height: 70%;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 1em;
+    font-weight: lighter;
+}
 .cart img.cartItemClear {
     height: 60%;
     vertical-align: middle;

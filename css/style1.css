@@ -5,6 +5,7 @@
 		--color-B-Darker: #0e0e0e; /*sidebar selected children hover */
 		--color-G_F:#3aabe0; /* Home search icon, NavBar top border old:#29ce29*/
 		--color-G-Darker:#2d85ad; /*Navbar buttons Hover*/
+		--color-Dark-Mode-BG: #2A2F31;
 		--nav-height: 10vh;
 		--sidebar-width: 15vw;
 		--cart-width: 25vw;
@@ -35,9 +36,8 @@
 
 	div form#searchDiv {
 		display:flex;
-		margin: 0px 5vw;
 		height: 8vh;
-		margin-top: 2vh;
+		margin: 2vh 0 0;
 		padding: 12px 0;
 	}
     div form#searchDiv input[value=submit] {
@@ -91,7 +91,7 @@
 		background-color: var(--color-G_F);
 	}
 	#loginBox{
-		display: hidden;
+		display: none;
 		opacity: 0;
 		z-index: -200;
 		width:320px;

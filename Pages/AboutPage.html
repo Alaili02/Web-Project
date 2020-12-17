@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About us</title>
+    <link rel="stylesheet" type="text/css" href="../css/styleA.css">
+    <link rel="stylesheet" type="text/css" href="../css/style1.css">
+    <link rel="stylesheet" type="text/css" href="../css/NavBar.css">
+    <link rel="stylesheet" type="text/css" href="../css/SideMenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/MainContent.css">
+    <link rel="stylesheet" type="text/css" href="../css/Items.css">
+    <link rel="stylesheet" type="text/css" href="../css/Cart.css">
+    <script type = "text/javascript" src = "../js/Cart.js" defer></script>
+    <script type = "text/javascript" src = "../js/Dynamic.js" defer></script>
+</head>
+<body>
+    <!--- NavBar --->
+    <div id = "NavBar">
+        <div id = "SideButton">
+            <img src="../images/icons/menu_black.png" alt=""/>
+        </div>
+        <div id = "logo">
+            <a href = "../Index.php">Home</a>
+        </div>
+        <button onclick="window.location.href='./Form2.html';">Register</button>
+        <button onclick="ShowLogin()">Login</button>
+        <!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
+        <button id = "CartBtn">Cart</button>
+    </div>
+
+    <!--- SideMenu --->
+    <div id = "SideMenu">
+        <ul>
+            <li class = "dropDown" id = "Category1">Video Games</li>
+            <li class = "container hidden" id = "Category1Container">
+                <ul>
+                    <li><a href = "../pages/Consoles.html">Consoles</a></li>
+                    <li><a href = "../pages/games.html">Games</a></li>
+                    <li><a href = "../pages/accessories.html">Accessories</a></li>
+                    <li><a href = "../pages/giftcards.html">Giftcards</a></li>
+                </ul>
+            </li>
+            <li class = "dropDown" id = "Category2">Home Products</li>
+            <li class = "container hidden" id = "Category2Container">
+                <ul>
+                    <li><a href = "../pages/Cologne.html">Cologne</a></li>
+                    <li><a href = "../pages/Shaving Products.html">Shaving Products</a></li>
+                </ul>
+            </li>
+            <li class = "dropDown" id = "Category3">Electronics</li>
+            <li class = "container hidden" id = "Category3Container">
+                <ul>
+                    <li><a href = "../pages/phones.html">Phones</a></li>
+                    <li><a href = "../pages/PrebuiltComputers.html">Prebuilt Computers</a></li>
+                </ul>
+            </li>
+            <li class = "dropDown" id = "Category4">Others</li>
+            <li class = "container hidden" id = "Category4Container">
+                <ul>
+                    <li><a href = "../pages/Books.html">Books</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!--- Cart --->
+    <div id="cart" class="cart">
+        <table id="cart1">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody id ="ProductsCartBody">
+            </tbody>
+            <tfoot>
+            <td colspan="2" id="total">Total: $0.00</td>
+            <td colspan="3" id = "CheckOut">
+                <!-- <button onclick=checkout()>Check Out</button> -->
+                <button>Check Out</button>
+            </td>
+            </tfoot>
+        </table>
+    </div>
+
+    <!--- MainContent -->
+    <div id = "MainContent">
+		<div class="contentAB">
+			<div id="about">
+                <h1> About us</h1>
+				<h2>Hadi's Shop</h2>
+				
+				<h3>What do we do?</h3>
+				<p> </p>
+				
+				<h3>Our History</h3>
+				<p>
+				With many years of love for electronics, our aim is to always be the best. This is why we will always be dedicated to providing you with the best supplies at the most competitive prices.</p>
+				
+				<h3>Our services!</h3>
+				<p>Through .... choose the products you want, check and select their specifications, and order all that your heart desires with one click and we will deliver all your needs to you anywhere across Lebanon within one to three working days. </p>
+				
+				<p>This online delivery service will finally help you save time and avoid traffic jams. We are proud to make all this possible thanks to our delivery team and online payment-processing partner.</p>
+			</div>
+		</div>
+    </div>
+
+    <!--- Login --->
+    <div id="loginBox">
+        <h1>Login</h1>
+        <Form method ="POST" action = "#" autocomplete="on" onsubmit="Login()">
+            <div class="formElement">
+                <span>Username</span>
+                <input type="text" name = "username" id = "UsernameInput" placeholder= "Username" required>
+            </div>
+            <div class="formElement" >
+                <span>Password:</span>
+                <input type="password" name ="Password" placeholder = "Password" required>
+            </div>
+            <input type="submit" value="Login">
+            <input type="button" onclick="window.location.href='./Form2.html';" value="No account? Register here" >
+        </Form>
+    </div>
+</body>
+</html>

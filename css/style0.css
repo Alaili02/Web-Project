@@ -7,12 +7,12 @@
     margin: auto;
 }
 header{
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url("../images/Homepage/backgroundd.jpg");
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../images/Homepage/backgroundd.jpg");
     height: 100vh;
     -webkit-background-size:cover;
     background-size: cover;
     background-position: center center;
-    position: relative;{}
+    position: relative;
 }
 .nav-area{
     float: right;
