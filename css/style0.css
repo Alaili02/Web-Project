@@ -6,13 +6,17 @@
     width: 1170px;
     margin: auto;
 }
-header{
+.background{
     background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../images/Homepage/backgroundd.jpg");
     height: 100vh;
     -webkit-background-size:cover;
     background-size: cover;
     background-position: center center;
     position: relative;
+}
+#about {
+   
+    color: #fff;
 }
 .nav-area{
     float: right;
@@ -65,3 +69,9 @@ header{
     background:#fff;
     color: #333;
 }  
+form{
+    color: #fff;
+}
+html {
+    scroll-behavior: smooth;
+  }
