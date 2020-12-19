@@ -81,14 +81,14 @@
 
             $pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=webproject','root','');
             if (!isset($_GET['searchQ'])) {
-                $stmt = $pdo->prepare("SELECT * from waifus");
+                $stmt = $pdo->prepare("SELECT * from topseller");
                 $stmt->execute();
 
             } else if ($_GET['searchQ'] == '') {
-                $stmt = $pdo->prepare("SELECT * from waifus");
+                $stmt = $pdo->prepare("SELECT * from topseller");
                 $stmt->execute();
             } else {
-                $stmt = $pdo->prepare("SELECT * from waifus where name = :name");
+                $stmt = $pdo->prepare("SELECT * from topseller where name = :name");
                 $stmt->execute(['name'=>$_GET['searchQ']]);
             }
 
