@@ -10,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../css/Cart.css">
     <script type = "text/javascript" src = "../js/Cart.js" defer></script>
     <script src = "../js/Dynamic.js" defer></script>
-    <title>Products</title>
+    <title>Products</title>   
+     
 </head>
 <body>
     <!--- NavBar --->
@@ -25,6 +26,18 @@
         <button onclick="ShowLogin()">Login</button>
         <!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
         <button id = "CartBtn">Cart</button>
+        <?php
+       /* require_once "../php/login.php";
+       if( login($_REQUEST['username'],$_REQUEST['Password']))
+          {
+            $message = "wellcome";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+          }
+          else {
+            $message = "wrong username or password";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+          }*/
+        ?>
     </div>
 
     <!--- SideMenu --->
@@ -145,6 +158,13 @@
             <input type="submit" value="Login">
             <input type="button" onclick="window.location.href='./Form2.html';" value="No account? Register here" >
         </Form>
+    <?php        
+       include "login.php";
+       if (isset($_REQUEST["username"],$_REQUEST["Password"])){
+            login($_REQUEST["username"],$_REQUEST["Password"]);
+        }
+       ?>
     </div>
 </body>
+
 </html>
