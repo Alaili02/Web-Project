@@ -1,12 +1,12 @@
 .cart {
-    margin-top: var(--nav-height);
+    top: var(--nav-height);
     width: var(--cart-width);
-    height: 100%;
     position: fixed;
-    top: 0;
+    height: calc(100vh - var(--nav-height));
     right: calc(-1 *var(--cart-width));
     transition: transform 0.2s ease;
     background-color: var(--color-B);
+    overflow: visible;
 }
 .updatedcart{
     transform: translate(calc(-1 *var(--cart-width)));
@@ -23,34 +23,29 @@
     width: 100%;
     color: var(--color-A)
 }
-.cart th,td{
+.cart th, .cart td{
     text-align: center;
     border-bottom: 1px solid var(--color-A);
-    padding:10px;
+    min-height: 1vh;
+    height: 2rem;
+    line-height: 2rem;
+    margin: 1vh;
 }
 
-.cart .buttonremove{
-    background-color: inherit;
-    color: black;
-    border-color: red;
-}
 .cart tbody#ProductsCartBody tr :nth-child(2) {
-    height: 0;
-    padding: 0;
+
 }
 .cart input[type=number] {
-    height: 70%;
     outline: none;
     border: 1px solid white;
     border-radius: 0.3rem;
     text-align: center;
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: lighter;
 }
 .cart img.cartItemClear {
-    height: 60%;
+    height: 100%;
     vertical-align: middle;
-    padding: 0;
     cursor: pointer;
     filter: invert(91%) sepia(7%) saturate(149%) hue-rotate(245deg) brightness(100%) contrast(84%);
     transition: transform 0.2s ease;
@@ -59,10 +54,10 @@
     transform: scale(1.25,1.25);
 }
 .cart td#CheckOut {
-    height: 0;
-    padding: 0;
+
 }
 .cart td#CheckOut button {
+    cursor: pointer;
     height: 100%;
     width: 100%;
     outline: none;
@@ -72,7 +67,6 @@
     font-weight: bolder;
     font-size: 1rem;
     transition: background-color 0.2s ease;
-    padding: 0 10px;
 }
 .cart td#CheckOut button:hover {
     background-color: var(--color-G-Darker);

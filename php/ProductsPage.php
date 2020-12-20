@@ -22,8 +22,16 @@
         <div id = "logo">
             <a href = "../Index.php">Home</a>
         </div>
-        <button onclick="window.location.href='../pages/Form2.html';">Register</button>
-        <button onclick="ShowLogin()">Login</button>
+        <button
+            <?php
+                $RemoveCookie = 'document.cookie = "LoggedIn=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"';
+                if (isset($_COOKIE['LoggedIn'])) {
+                    echo "onclick= '$RemoveCookie;location.reload();'>".$_COOKIE['LoggedIn'];
+                } else {
+                    echo ' onclick="ShowLogin()">Login';
+                }
+            ?>
+        </button>
         <!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
         <button id = "CartBtn">Cart</button>
         <?php
@@ -43,35 +51,10 @@
     <!--- SideMenu --->
     <div id = "SideMenu">
         <ul>
-            <li class = "dropDown" id = "Category1">Video Games</li>
-            <li class = "container hidden" id = "Category1Container">
-                <ul>
-    <!--                <li><a href = "../Pages/consoles.html">Consoles</a></li>-->
-    <!--                <li><a href = "../Pages/games.html">Games</a></li>-->
-    <!--                <li><a href = "../Pages/accessories.html">Accessories</a></li>-->
-    <!--                <li><a href = "../Pages/giftcards.html">Giftcards</a></li>-->
-                </ul>
-            </li>
-            <li class = "dropDown" id = "Category2">Home Products</li>
-            <li class = "container hidden" id = "Category2Container">
-    <!--            <ul>-->
-    <!--                <li><a href = "../Pages/Cologne.html">Cologne</a></li>-->
-    <!--                <li><a href = "../Pages/Shaving Products.html">Shaving Products</a></li>-->
-    <!--            </ul>-->
-            </li>
-            <li class = "dropDown" id = "Category3">Electronics</li>
-            <li class = "container hidden" id = "Category3Container">
-    <!--            <ul>-->
-    <!--                <li><a href = "../Pages/phones.html">Phones</a></li>-->
-    <!--                <li><a href = "../Pages/PrebuiltComputers.html">Prebuilt Computers</a></li>-->
-    <!--            </ul>-->
-            </li>
-            <li class = "dropDown" id = "Category4">Others</li>
-            <li class = "container hidden" id = "Category4Container">
-    <!--            <ul>-->
-    <!--                <li><a href = "../Pages/Books.html">Books</a></li>-->
-    <!--            </ul>-->
-            </li>
+            <li class = "dropDown">Video Games</li>
+            <li class = "dropDown">Home Products</li>
+            <li class = "dropDown">Electronics</li>
+            <li class = "dropDown">Others</li>
         </ul>
     </div>
 
@@ -146,7 +129,7 @@
     <!--- Login --->
     <div id="loginBox">
         <h1>Login</h1>
-        <Form method ="POST" action = "#" autocomplete="on" onsubmit="Login()">
+        <Form method ="POST" action = "login.php" autocomplete="on" onsubmit="Login()">
             <div class="formElement">
                 <span>Username</span>
                 <input type="text" name = "username" id = "UsernameInput" placeholder= "Username" required>
@@ -156,14 +139,8 @@
                 <input type="password" name ="Password" placeholder = "Password" required>
             </div>
             <input type="submit" value="Login">
-            <input type="button" onclick="window.location.href='./Form2.html';" value="No account? Register here" >
+            <input type="button" onclick="window.location.href='../pages/Form2.html';" value="No account? Register here" >
         </Form>
-    <?php        
-       include "login.php";
-       if (isset($_REQUEST["username"],$_REQUEST["Password"])){
-            login($_REQUEST["username"],$_REQUEST["Password"]);
-        }
-       ?>
     </div>
 </body>
 

@@ -72,7 +72,7 @@ class Cart {
 
         let input=document.createElement("input");
         input.setAttribute("type","number");
-        input.setAttribute("value",quantity.toString());
+        input.setAttribute("value",quantity);
         input.setAttribute("min","1");
         input.setAttribute("max","999");
         // input.setAttribute("onkeydown","return false;");

@@ -4,7 +4,7 @@ function CreateItem($name, $price, $src, $defaultQuantity) {
     return (
 "<div class='Item'>
         <figure>
-            <img class='ProductImage' src=$src>
+            <img class='ProductImage' src='$src'>
             <div class = 'ProductCaption'>
                 <figcaption class='ProductName'>
                     <a href='www.google.com'>$name</a>

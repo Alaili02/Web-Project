@@ -3,6 +3,7 @@
 <head>
         <meta charset="utf-8">
         <link rel = "stylesheet" type = "text/css" href= "./css/style0.css">
+        <link rel = "stylesheet" type = "text/css" href= "./css/Contact.css">
         <title>Home</title>
     </head>
     <body>
@@ -23,6 +24,8 @@
                 <a href = "#form"> Contact us</a>
             </div>
         </header>
+
+        <!-- About Us -->
         <div id="about" class="background">
                 <h1> About us</h1>
 				<h2>Hadi's Shop</h2>
@@ -39,37 +42,72 @@
 				
 				<p>This online delivery service will finally help you save time and avoid traffic jams. We are proud to make all this possible thanks to our delivery team and online payment-processing partner.</p>
             </div>
-            <div class="background" id="form">
-                <form action="../php/ContactForm.php" method="POST">
-                    <p>
-                      <label for="full name">Full Name:</label>
-                      <input type="text" id="full name" name="fullname" placeholder="Your name.." style="width:100%;max-width:250px;" required>
-                    </p>
-                    <p>
-                      <label for="PhoneNumber">Phone number:</label>
-                      <input name="PhoneNumber" id="PhoneNumber" type="text" style="width:100%;max-width:250px;" placeholder="##/######"required />
-                    </p>
-                    <p>
-                        <label for="FromEmailAddress">Email address:</label>
-                        <input name="FromEmailAddress" id="FromEmailAddress" type="text" style="width:100%;max-width:250px;"placeholder="someone@example.com" required/>
-                    </p>
-                    <label for="country">Country:</label>
-                    <select id="country" name="country" required>
-                        <option value="Lebanon">Lebanon</option>
-                        <option value="Kuwait">Kuwait</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Usa">USA</option>
-                    </select>
-    
-                    <label for="subject">Subject:</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
-    
-                    <input type="submit" value="Submit">
-    
-                </form>
-            </div>
+
+        <!-- Contact Us -->
+        <div class="container">
+            <form action="../php/ContactForm.php" method="POST">
+                <p>
+                    <label for="full name">Full Name:</label>
+                    <input type="text" id="full name" name="fullname" placeholder="Your name.." style="width:100%;max-width:250px;" required>
+                </p>
+                <p>
+                    <label for="PhoneNumber">Phone number:</label>
+                    <input name="PhoneNumber" id="PhoneNumber" type="text" style="width:100%;max-width:250px;" placeholder="##/######"required />
+                </p>
+                <p>
+                    <label for="FromEmailAddress">Email address:</label>
+                    <input name="FromEmailAddress" id="FromEmailAddress" type="text" style="width:100%;max-width:250px;"placeholder="someone@example.com" required/>
+                </p>
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Usa">USA</option>
+                </select>
+
+                <label for="subject">Subject:</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+
+
+<!--        <div class="background" id="form">-->
+<!--            <form action="../php/ContactForm.php" method="POST">-->
+<!--                <p>-->
+<!--                  <label for="full name">Full Name:</label>-->
+<!--                  <input type="text" id="full name" name="fullname" placeholder="Your name.." style="width:100%;max-width:250px;" required>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                  <label for="PhoneNumber">Phone number:</label>-->
+<!--                  <input name="PhoneNumber" id="PhoneNumber" type="text" style="width:100%;max-width:250px;" placeholder="##/######"required />-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    <label for="FromEmailAddress">Email address:</label>-->
+<!--                    <input name="FromEmailAddress" id="FromEmailAddress" type="text" style="width:100%;max-width:250px;"placeholder="someone@example.com" required/>-->
+<!--                </p>-->
+<!--                <label for="country">Country:</label>-->
+<!--                <select id="country" name="country" required>-->
+<!--                    <option value="Lebanon">Lebanon</option>-->
+<!--                    <option value="Kuwait">Kuwait</option>-->
+<!--                    <option value="Spain">Spain</option>-->
+<!--                    <option value="Australia">Australia</option>-->
+<!--                    <option value="Canada">Canada</option>-->
+<!--                    <option value="Usa">USA</option>-->
+<!--                </select>-->
+<!---->
+<!--                <label for="subject">Subject:</label>-->
+<!--                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>-->
+<!---->
+<!--                <input type="submit" value="Submit">-->
+<!---->
+<!--            </form>-->
+<!--        </div>-->
 
         </div>
     </body>
