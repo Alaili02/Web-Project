@@ -1,0 +1,60 @@
+#NavBar.Shifted {transform: translate(var(--sidebar-width));}
+#NavBar {
+    z-index: 10;
+    display: flex;
+    flex-flow: row nowrap;
+    position: fixed;
+    height: var(--nav-height);
+    top: 0;
+    width: 100%;
+    background-color: var(--color-B);
+    border-top: 3px solid var(--color-G_F);
+
+    -webkit-box-shadow: 0 0.005em 0.5em rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0.005em 0.5em rgba(0,0,0,0.75);
+    box-shadow: 0 0.005em 0.5em rgba(0,0,0,0.75);
+    transition: transform 0.2s ease;
+}
+
+#NavBar :nth-child(3) {margin-left: auto;}
+#NavBar button {
+    padding: 6px 12px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color:var(--color-B);
+    color: var(--color-A);
+    border: none;
+    transition: background-color 0.1s ease-in-out;
+    outline: none;
+}
+
+#NavBar button:hover{background-color: var(--color-G-Darker);}
+#NavBar #CartBtn.active {background-color: var(--color-G_F);}
+
+#NavBar div#logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#NavBar div#logo a{
+    display: block;
+    font-size: 2.5rem;
+    color: var(--color-A);
+    text-decoration: none;
+}
+
+#NavBar div#SideButton {
+    height: 100%;
+    width: var(--nav-height);
+    cursor: pointer;
+}
+
+#NavBar div#SideButton img {
+    box-sizing: border-box;
+    padding: 1vw;
+    width: var(--nav-height);
+    transition: transform 0.2s ease;
+    filter: invert(91%) sepia(7%) saturate(149%) hue-rotate(245deg) brightness(100%) contrast(84%);
+}
+#NavBar div#SideButton img.pressed {transform: rotate(-90deg);}

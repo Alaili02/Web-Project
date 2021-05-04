@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type = "text/css" href = "../css/style3.css">
+        <title>Sign in</title>
+    </head>
+    <body>
+        <div id="registerBox" >
+            <h1>Register</h1>
+        <form action="POST" autocomplete ="on" action="#">
+            <div class="left">
+                <label>First Name:</label>  <input type="text" name="FName" placeholder="First Name" required>
+            </div> 
+            <div class="right">
+                <label> Last Name:</label>  <input type="text" name="LName" placeholder="Last Name" required>
+             </div>
+           
+            <div class="left">
+                <label > Email:</label>  <input type="email"name="email" placeholder="example@hotmail.com" required>
+            </div>
+           
+            <div class="right">
+                <label> Username:</label> <input type="text" name="username" placeholder="Username" required>
+            </div>
+       
+            <div class="left">
+                <label> Password: </label>  <input type="password" name="passwoed" placeholder="Password" required>
+            </div>
+            <div class="right">
+               <label>  Telephone Number: </label> 
+               <input type="tel" name="tel" placeholder="(##)-###-###" pattern=" \ (\d{2}\) +\d{3} - \d{3}" required>
+            </div>
+            <div class="left" style="height: auto;">
+                Gender:
+                <input type="radio" name="Gender" value="Male"> Male
+                <input type="radio" name="Gender" value="Female"> Female
+            </div>
+            <div style="clear: both;">
+				<label>Country:</label>
+				<select name='country'>
+					<option>Lebanon</option>
+					<option>Syria</option>
+					<option>Palestine</option>
+					<option>Saudi Arabia</option>
+                    <option>Egypt</option>
+                    <option>Oman</option>
+                    <option>France</option>
+                    <option>Italy</option>
+                    <option>Germany</option>
+                    <option>Spain</option>
+					<option>United States of America</option>
+				</select>
+			</div>
+            <div style="clear:both;">
+                <input type="submit" value="Register">
+            </div> 
+        </form>
+        </div>
+    </body>
+</html>

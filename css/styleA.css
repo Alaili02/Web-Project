@@ -1,0 +1,181 @@
+
+ .contentAB #about h2 {
+	font-size: 26px;
+	color:#ff4d00;
+}
+
+.contentAB #about h3 {
+	font-size: 24px;
+	color:#ff8000;
+}
+
+.contentAB {
+	background-image
+	border:20px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 500px;
+	margin:  100px 0 50px;
+    width: auto;
+	padding: 0 0 30px;
+}
+.contentAB div {
+    margin: 100px auto 0;
+    width: 960px;
+}
+.contentAB div#about p{
+	margin: 0 30px 25px;
+	font-family: arial;
+	font-size: 20px;
+	color: red;
+	width: auto;
+	line-height: 26px;
+	text-align: justify;
+}
+.contentAB div#about p a{
+	color: #555555;
+	text-decoration: underline;
+}
+/*#foot {
+    
+    padding: 50px 0;
+  
+    width: 100%;
+    overflow: hidden;
+    background-color: #000000;
+  
+	color: #606060;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+ 	font-weight: 400;
+ 	line-height: 20px;
+} 
+	#foot .container { 
+		float: left;
+	position: relative;
+		color: white;
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 310px;
+    padding-right: 15px;
+    width: 1400px;
+}
+#foot .container .col1 {
+	float: left;
+
+}
+#foot .container .col{
+	float: left;
+		margin-left:50px; 
+}
+
+
+
+#foot .container ul{
+	list-style-type:none;
+	padding: 0;
+	margin: 0;
+}
+#body div#contentCU{
+    width:960px;
+	margin:0 auto;
+	overflow:hidden;
+	background-image:none;
+	height:auto;
+	overflow:hidden;
+  }
+
+
+  #body div#contentCU .contentCU{
+    float:left; 
+	width:640px;
+	margin-right:20px;
+	background-image:none;
+	height:auto;
+	overflow:hidden;
+  }
+  #body #contentCU .contentCU h2{
+	
+	font-family: "Myriad Pro";
+    margin: 80px 0 0 30px;
+  }
+
+
+   
+  #body #contentCU .contentCU ul li span a{
+    color: #7F7154;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+	text-decoration:none;
+  }
+
+  #body #contentCU .contentCU div p {
+    margin: 10px 0 0 30px;
+    padding: 0 15px 0 0;
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    line-height: 25px;
+    color: #7F7154;
+
+} 
+
+#body #contentCU .contentCU ul {
+	padding-bottom: 50px; 
+}
+#body #contentCU .contentCU ul li p {
+    font-family: "Myriad Pro";
+    font-size: 14px;
+    text-align: justify;
+    color: #7f7154;
+    margin: 10px 0 0 30px;
+}
+  #body #contentCU .contentCU ul li span a:hover{
+    color: rgb(255, 217, 4); 
+  } /* for the email links format */ 
+
+ #body #contentCU #sidebar .connect h2{
+	  color:#ff9e01;
+	  font-family:"Myriad Pro";
+	  font-size:28px;
+	  font-style:Italic;
+	  margin:80px 0 0 0;
+	  padding:0;
+	  font-weight:normal;
+	} /*font format of H2 */ 
+	#body #contentCU #sidebar .connect ul{
+	  margin:0;
+	  list-style-type:none;
+    } /* remove dots */ 
+    input[type=text], select, textarea {
+        width: 100%; /* Full width */
+        padding: 12px; /* Some padding */ 
+        border: 1px solid #ccc; /* Gray border */
+        border-radius: 4px; /* Rounded borders */
+        box-sizing: border-box; /* Make sure that padding and width stays in place */
+        margin-top: 6px; /* Add a top margin */
+        margin-bottom: 16px; /* Bottom margin */
+        resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+      }
+      
+      /* Style the submit button with a specific background color etc */
+      input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      /* When moving the mouse over the submit button, add a darker green color */
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      /* Add a background color and some padding around the form */
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 75px;
+      }

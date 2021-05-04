@@ -1,0 +1,11 @@
+#MainContent.Shifted {transform: translate(var(--sidebar-width));}
+#MainContent.CartShift {margin-right: var(--cart-width);}
+#MainContent {
+    margin-top: var(--nav-height);
+    transition: transform 0.2s ease, margin-right 0.2s ease;
+}
+
+#MainContent h1 {
+    padding:10px;
+    text-align: center;
+}

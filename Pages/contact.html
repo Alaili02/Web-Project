@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact us</title>
+    <link rel="stylesheet" type="text/css" href="../css/styleA.css">
+    <link rel="stylesheet" type="text/css" href="../css/style1.css">
+    <link rel="stylesheet" type="text/css" href="../css/NavBar.css">
+    <link rel="stylesheet" type="text/css" href="../css/SideMenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/MainContent.css">
+    <link rel="stylesheet" type="text/css" href="../css/Items.css">
+    <link rel="stylesheet" type="text/css" href="../css/Cart.css">
+    <script type = "text/javascript" src = "../js/DetangledSpaghetti.js" defer></script>
+</head>
+<body>
+    <!--- NavBar --->
+    <div id = "NavBar">
+        <div id = "SideButton">
+            <img src="../images/icons/menu_black.png" />
+        </div>
+        <div id = "logo">
+            <a href = "Homepage.html">Home</a>
+        </div>
+        <button onclick="window.location.href='pages/Form2.html';">Register</button>
+        <button onclick="ShowLogin()">Login</button>
+        <!-- <button id = "CartBtn" onclick="CartToggle()">Cart</button> -->
+        <button id = "CartBtn">Cart</button>
+    </div>
+
+    <!--- SideMenu --->
+    <div id = "SideMenu">
+        <ul>
+            <li class = "dropDown" id = "Category1">Video Games</li>
+            <li class = "container hidden" id = "Category1Container">
+                <ul>
+                    <li><a href = "../pages/Consoles.html">Consoles</a></li>
+                    <li><a href = "../pages/games.html">Games</a></li>
+                    <li><a href = "../pages/accessories.html">Accessories</a></li>
+                    <li><a href = "../pages/giftcards.html">Giftcards</a></li>
+                </ul>
+            </li>
+            <li class = "dropDown" id = "Category2">Home Products</li>
+            <li class = "container hidden" id = "Category2Container">
+                <ul>
+                    <li><a href = "../pages/Cologne.html">Cologne</a></li>
+                    <li><a href = "../pages/Shaving Products.html">Shaving Products</a></li>
+                </ul>
+            </li>
+            <li class = "dropDown" id = "Category3">Electronics</li>
+            <li class = "container hidden" id = "Category3Container">
+                <ul>
+                    <li><a href = "../pages/phones.html">Phones</a></li>
+                    <li><a href = "../pages/PrebuiltComputers.html">Prebuilt Computers</a></li>
+                </ul>
+            </li>
+            <li class = "dropDown" id = "Category4">Others</li>
+            <li class = "container hidden" id = "Category4Container">
+                <ul>
+                    <li><a href = "../pages/Books.html">Books</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!--- Cart --->
+    <div id="cart" class="cart">
+        <table id="cart1">
+            <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody id ="ProductsCartBody">
+            </tbody>
+            <tfoot>
+            <td colspan="2" id="total">Total: $0.00</td>
+            <td colspan="3" id = "CheckOut">
+                <!-- <button onclick=checkout()>Check Out</button> -->
+                <button>Check Out</button>
+            </td>
+            </tfoot>
+        </table>
+    </div>
+
+    <!--- MainContent -->
+    <div id="MainContent">
+        <div class="container">
+            <form action="../php/ContactForm.php" method="POST">
+                <p>
+                  <label for="fullname">Full Name:</label>
+                  <input type="text" id="full name" name="fullname" placeholder="Your name.." style="width:100%;max-width:250px;" required>
+                </p>
+                <p>
+                  <label for="PhoneNumber">Phone number:</label>
+                  <input name="PhoneNumber" type="text" style="width:100%;max-width:250px;" placeholder="##/######"required />
+                </p>
+                <p>
+                    <label for="FromEmailAddress">Email address:</label>
+                    <input name="FromEmailAddress" type="text" style="width:100%;max-width:250px;"placeholder="someone@example.com" required/>
+                </p>
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Usa">USA</option>
+                </select>
+
+                <label for="subject">Subject:</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+
+                <input type="submit" value="Submit">
+
+            </form>
+        </div>
+    </div>
+    <script src = "../js/ShiftPage.js"></script>
+</body>
+</html>
