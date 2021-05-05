@@ -1,8 +1,6 @@
 <?php
-    echo "I am alive";
-
      $pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=webproject','root','');
-     $stmt = $pdo->prepare("INSERT INTO contactus(`Full Name`, `Phone Number`, `Email Address`, `Country`, `Messsage`) VALUES (:fname, :phone, :email, :country, :message)");
+     $stmt = $pdo->prepare("INSERT INTO contactus(`Full Name`, `Phone Number`, `Email Address`, `Country`, `Message`) VALUES (:fname, :phone, :email, :country, :message)");
 
      $stmt->execute(array(
          'fname' => $_POST["fullname"],
@@ -11,5 +9,5 @@
          'country' => $_POST["country"],
          'message' => $_POST["subject"]
      ));
-     header('location: ../index%20-%20copy.html');
+     header('location: ../Index.php');
  ?>

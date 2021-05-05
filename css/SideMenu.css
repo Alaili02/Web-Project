@@ -8,6 +8,25 @@
     transition: transform 0.2s ease;
 }
 
+#SideMenu ul {
+    list-style:none;
+    background-color: var(--color-B);
+    height: 100%;
+}
+
+#SideMenu .hidden {
+    display:none;
+}
+
+#SideMenu .visible {
+    display:block;
+    border-bottom: 3px solid var(--color-G_F);
+}
+
+#SideMenu.active {
+    background-color: var(--color-G_F);
+}
+
 #SideMenu li.dropDown{
     display: block;
     padding: 16px;

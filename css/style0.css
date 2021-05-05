@@ -1,67 +1,54 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
 }
-.wrapper{
-    width: 1170px;
-    margin: auto;
-}
-header{
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url("../images/Homepage/backgroundd.jpg");
-    height: 100vh;
+html { scroll-behavior: smooth; }
+body {
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("../images/Homepage/backgroundd.jpg");
     -webkit-background-size:cover;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
-    position: relative;{}
+    color: var(--color-A);
 }
-.nav-area{
-    float: right;
-    list-style: none;
-    margin-top: 30px;
+
+.productsAboutContainer {
+    min-height: 80vh;
 }
-.nav-area li {
-    display: inline-block;
+
+.productsAboutContainer .box {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
-.nav-area li a{
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 20px;
-    font-family: poppins;
-    font-size: 16px;
+
+.productsAboutContainer .box div {
+    width: 10%;
+    padding: 2vh;
 }
-.nav-area li a:hover{
-    background: #fff;
-    color: #333;
+
+.productsAboutContainer .box div img {
+    display: block;
+    margin: 0 auto;
 }
-.logo img{
-    width: 100px;
-    float: left;
-    height:auto;
+
+.productsAboutContainer :first-child {
+
 }
-.welcome-text{
-    position: absolute;
-    width: 600px;
-    height: 300px;
-    margin: 20% 30%;
+
+.productsAboutContainer :last-child {
     text-align: center;
 }
-.welcome-text h1{
-    text-align: center;
-    color: #FFFF00;
-    text-transform: uppercase;
-    font-size:60px;
-}
-.welcome-text a{
-    border: 1px solid #FFF;
-    padding: 10px 25px;
+
+.productsAboutContainer a {
+    display: block;
+    font-size: 2rem;
+    margin: 0 auto;
+    width: 50%;
+    padding: 2vh 0;
+    color: var(--color-A);
+    background-color: var(--color-G_F);
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-top: 20px;
-    display: inline-block;
-    color:#fff; 
+    border-radius: 1rem;
 }
-.welcome-text a:hover{
-    background:#fff;
-    color: #333;
-}  

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+:root {
+    --color-A:#dfd9e0; /*--color-B */
+    --color-B:#202020; /*Background Color Navbar and product name+price old:#262b30*/
+    --color-B-Darker: #0e0e0e; /*sidebar selected children hover */
+    --color-G_F:#3aabe0; /* Home search icon, NavBar top border old:#29ce29*/
+    --color-G-Darker:#2d85ad; /*Navbar buttons Hover*/
+    --color-Dark-Mode-BG: #2A2F31;
+    --nav-height: 10vh;
+    --sidebar-width: 15vw;
+    --cart-width: 25vw;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-color: var(--color-A, white);
+    overflow-x: hidden;
+}
+
+.special {color: var(--color-G_F);}
